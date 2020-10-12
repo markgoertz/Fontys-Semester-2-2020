@@ -2,7 +2,7 @@
 
 namespace DTO_layer
 {
-    public class Vehicle
+    public class VehicleDTO
     {
         public int ID { get; set; }
         public string Brandname { get; set; }

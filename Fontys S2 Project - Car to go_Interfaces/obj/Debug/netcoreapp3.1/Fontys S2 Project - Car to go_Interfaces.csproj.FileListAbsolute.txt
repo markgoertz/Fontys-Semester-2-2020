@@ -3,3 +3,10 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\bin\Debug\net
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.csprojAssemblyReference.cache
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.AssemblyInfoInputs.cache
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.AssemblyInfo.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\bin\Debug\netcoreapp3.1\DTO layer.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\bin\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.pdb
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\bin\Debug\netcoreapp3.1\DTO layer.pdb
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.csproj.CoreCompileInputs.cache
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.csproj.CopyComplete
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_Interfaces\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.pdb

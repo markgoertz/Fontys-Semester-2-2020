@@ -10,5 +10,6 @@ namespace Interfaces.IDBconnectionHandler
         SqlConnection Connection { get; }
         SqlConnection Open();
         void Close();
+
     }
 }

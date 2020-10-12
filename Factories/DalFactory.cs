@@ -1,10 +1,11 @@
-﻿using DAL.Handler;
+﻿using DAL.DatabaseConnectionHandler;
+using DAL.Handler;
 using Interfaces.IHandlers;
 using System;
 
 namespace Factories
 {
-    public static class CarFactory
+    public static class DalFactory
     {
         private static ICarDatabaseHandler _carHandler;
         public static ICarDatabaseHandler CarHandler

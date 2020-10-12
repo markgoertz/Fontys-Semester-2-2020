@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Fontys_S2_Project___Car_to_go_Interfaces.IHandlers
+namespace Interfaces.IHandlers
 {
-    class IHandlerGeneric
+    public interface IHandlerGeneric<T> where T : class
     {
+        List<T> GetAll();
+        void Create(T entity);
+        void Update(T entity);
+        void Delete(int id);
+        T GetById(int id);
+
+
     }
 }

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fontys S2 Project - Car to go", "Fontys S2 Project - Car to go.csproj", "{3B62DF48-A8DE-43DE-A51E-DE50B7FFDD95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fontys S2 Project - Car to go", "Fontys S2 Project - Car to go.csproj", "{3B62DF48-A8DE-43DE-A51E-DE50B7FFDD95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO layer", "..\DTO layer\DTO layer.csproj", "{79773297-18CA-4F83-994F-BFA4F93422FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO layer", "..\DTO layer\DTO layer.csproj", "{79773297-18CA-4F83-994F-BFA4F93422FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fontys S2 Project - Car to go_DAL", "..\Fontys S2 Project - Car to go_DAL\Fontys S2 Project - Car to go_DAL.csproj", "{BDB95769-7213-4B1B-934B-85FB08D6F227}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fontys S2 Project - Car to go_DAL", "..\Fontys S2 Project - Car to go_DAL\Fontys S2 Project - Car to go_DAL.csproj", "{BDB95769-7213-4B1B-934B-85FB08D6F227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fontys S2 Project - Car to go_Interfaces", "..\Fontys S2 Project - Car to go_Interfaces\Fontys S2 Project - Car to go_Interfaces.csproj", "{5D56BB37-4E1E-4539-8838-CA71718575E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fontys S2 Project - Car to go_Interfaces", "..\Fontys S2 Project - Car to go_Interfaces\Fontys S2 Project - Car to go_Interfaces.csproj", "{5D56BB37-4E1E-4539-8838-CA71718575E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factories", "..\Factories\Factories.csproj", "{5582EA63-EC31-456B-A8A8-F0D617B09597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factories", "..\Factories\Factories.csproj", "{5582EA63-EC31-456B-A8A8-F0D617B09597}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fontys S2 Project - Car to go_BLL", "..\Fontys S2 Project - Car to go_BLL\Fontys S2 Project - Car to go_BLL.csproj", "{F487B30A-1B0B-4E5E-A000-076D24FCF1F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5582EA63-EC31-456B-A8A8-F0D617B09597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5582EA63-EC31-456B-A8A8-F0D617B09597}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5582EA63-EC31-456B-A8A8-F0D617B09597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F487B30A-1B0B-4E5E-A000-076D24FCF1F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F487B30A-1B0B-4E5E-A000-076D24FCF1F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F487B30A-1B0B-4E5E-A000-076D24FCF1F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F487B30A-1B0B-4E5E-A000-076D24FCF1F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,9 +6,9 @@ using System.Text;
 
 namespace DAL.DatabaseConnectionHandler
 {
-    public class DBConnectionHandler : IDBConnectionHandler
+    public class DBConnectionHandler : IDBConnectionHandler 
     {
-        private protected string connectionString = "Server=mssql.fhict.local;Database=dbi434548";
+        private protected string connectionString = "Server=mssql.fhict.local;Database=dbi434548;User Id = dbi434548; Password=MijnFontysServer2020";
         public SqlConnection Connection { get; private set; }
         public SqlConnection Open()
         {

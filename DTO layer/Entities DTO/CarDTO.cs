@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DTO_layer.Entities_DTO
 {
-    class CarDTO
+    public class CarDTO : VehicleDTO
     {
+        public double Acceleration { get; set; }
     }
 }

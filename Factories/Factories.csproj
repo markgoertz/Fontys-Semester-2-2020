@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fontys S2 Project - Car to go_DAL\Fontys S2 Project - Car to go_DAL.csproj" />
+    <ProjectReference Include="..\Fontys S2 Project - Car to go_Interfaces\Fontys S2 Project - Car to go_Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

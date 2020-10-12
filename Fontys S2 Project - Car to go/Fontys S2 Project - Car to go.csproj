@@ -5,4 +5,8 @@
     <RootNamespace>Fontys_S2_Project___Car_to_go</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fontys S2 Project - Car to go_BLL\Fontys S2 Project - Car to go_BLL.csproj" />
+  </ItemGroup>
+
 </Project>

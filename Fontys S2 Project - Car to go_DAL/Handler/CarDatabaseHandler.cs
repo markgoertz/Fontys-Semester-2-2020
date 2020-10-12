@@ -1,28 +1,30 @@
 ﻿using DTO_layer.Entities_DTO;
 using Interfaces.IDBconnectionHandler;
+using Interfaces.IHandlers;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Text;
 
-namespace Car_to_go_DAL.Handler
+namespace DAL.Handler
 {
-    public class CarDatabaseHandler 
+    public class CarDatabaseHandler :ICarDatabaseHandler
     {
         private static readonly string connectionString = "";
-        private readonly IDBConnectionHandler _connectionString;
+        private readonly IDBConnectionHandler _dbCon;
 
         public CarDatabaseHandler(IDBConnectionHandler dbCon)
         {
-            _connectionString = dbCon;
+            _dbCon = dbCon;
         }
 
         public List<CarDTO> GetAll()
         {
             var cars = new List<CarDTO>();
-            using (_connectionString.Open())
+            using (_dbCon.Open())
             {
                 string query = "SELECT * FROM Vehicle WHERE CategoryID = 1;";
-                using (SqlCommand command = new SqlCommand(query, _connectionString.Connection))
+                using (SqlCommand command = new SqlCommand(query, _dbCon.Connection))
                 {
                     var reader = command.ExecuteReader();
                     while (reader.Read())
@@ -46,7 +48,7 @@ namespace Car_to_go_DAL.Handler
                         cars.Add(CarDTO);
                     }
 
-                    _connectionString.Close();
+                    _dbCon.Close();
                 }
             }
             return cars;
@@ -57,7 +59,7 @@ namespace Car_to_go_DAL.Handler
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "INSERT INTO Vehicle (Brandname, Modelname, Transmission, Enginepower, Weight, Acceleration, Cargospace, Seat, Rentalprice, Fueltype, ImageLink, CategoryID) VALUES (@Brandname, @Modelname, @Transmission, @Enginepower, @Weight, @Acceleration, @Cargospace, @Seat, @Rentalprice, @Fueltype, @ImageLink, @CategoryID);";
-                using (SqlCommand command = new SqlCommand(query, _connectionString.Connection))
+                using (SqlCommand command = new SqlCommand(query, _dbCon.Connection))
                 {
                     command.Parameters.AddWithValue("@ID", C1.ID);
                     command.Parameters.AddWithValue("@Brandname", C1.Brandname);
@@ -85,7 +87,7 @@ namespace Car_to_go_DAL.Handler
             {
                 connection.Open();
                 string query = "UPDATE Vehicle Set Brandname = @Brandname, Modelname = @Modelname, Transmission = @Transmission, Enginepower = @Enginepower, Weight = @Weight, Acceleration = @Acceleration, Cargospace = @Cargospace, Seat = @Seat, Rentalprice = @Rentalprice, Fueltype = @Fueltype, ImageLink = @ImageLink WHERE ID = @ID;";
-                using (SqlCommand command = new SqlCommand(query, _connectionString.Connection))
+                using (SqlCommand command = new SqlCommand(query, _dbCon.Connection))
                 {
                     command.Parameters.AddWithValue("@ID", U1.ID);
                     command.Parameters.AddWithValue("@Brandname", U1.Brandname);
@@ -106,39 +108,18 @@ namespace Car_to_go_DAL.Handler
             }
         }
 
-        public CarDTO GetByID(CarDTO ID)
+        public CarDTO GetById(int id)
         {
-            CarDTO car = new CarDTO();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM [dbi434548].[dbo].[Vehicle] WHERE ID = @ID;";
+                string query = "SELECT * FROM vehicle WHERE ID = @ID; ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-                    command.Parameters.AddWithValue("@ID", ID.ID);
+                    command.Parameters.AddWithValue("@ID", id);
 
-                    var reader = command.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        car.ID = reader.GetInt32(0);
-                        car.Brandname = reader.GetString(1);
-                        car.Modelname = reader.GetString(2);
-                        car.Transmission = reader.GetString(3);
-                        car.Enginepower = reader.GetInt32(4);
-                        car.Weight = reader.GetInt32(5);
-                        car.Acceleration = reader.GetDouble(6);
-                        car.Cargospace = reader.GetInt32(7);
-                        car.Seat = reader.GetInt32(8);
-                        car.RentalPrice = reader.GetDouble(9);
-                        car.Fueltype = reader.GetString(10);
-                        car.ImageLink = reader.GetString(11);
-                        car.CategoryID = reader.GetInt32(12);
-                    }
                 }
-
-                return car;
             }
+            return new CarDTO();
         }
 
         public void Delete(int ID)

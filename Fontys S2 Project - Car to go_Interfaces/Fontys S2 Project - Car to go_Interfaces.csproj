@@ -5,4 +5,12 @@
     <RootNamespace>Fontys_S2_Project___Car_to_go_Interfaces</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DTO layer\DTO layer.csproj" />
+  </ItemGroup>
+
 </Project>
