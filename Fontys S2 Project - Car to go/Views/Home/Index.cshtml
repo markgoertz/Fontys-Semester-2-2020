@@ -1,33 +1,48 @@
-﻿@model IEnumerable<Fontys_S2_Project___Car_to_go.Models.CarViewmodel>
-@{ ViewData["Title"] = "Index"; }
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
 
-<div class="h2 pt-3 text-center font-weight-bold">Our showroom, meet the prestigious cars!</div>
-<hr />
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Search, Rent and got a Car to Go!</p>
+</div>
 
-<div class="col-container">
-    <div class="row">
+<div class="card-deck text-center">
+    <div class="card shadow" style="width:400px">
+        <img class="card-img-top" style="height:300px;" src="https://cdn.discordapp.com/attachments/754679426339569788/754681048776048750/17VwTRo5DrYelFR1_350.png" alt="Card image">
+        <div class="card-body">
+            <a class="h4 justify-content-center alert-link" asp-area="" asp-controller="Car" asp-action="Index">ALL CARS!</a>
+            <p class="card-text">For carying persons around!</p>
+        </div>
 
-        @foreach (var item in Model)
-        {
-            <div class="col-4 h-auto">
-                <div class="card mb-4" style="width:100%">
-                    <div class="card-img-top bd-placeholder-img" style="width:100%; height:225px">
-                        <img class="img-fluid" style="width:auto; height:auto" src="@Html.DisplayFor(ModelItem => item.ImageLink)" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">@Html.DisplayFor(Modelitem => item.Brandname) | @Html.DisplayFor(Modelitem => item.Modelname) </h5>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button class="btn btn-sm btn-outline-secondary">@Html.ActionLink("Lees meer!", "Details", "Car", new { ID = item.ID })</button>
-                            </div>
-                            <small class="text-muted">Rentalprice €@Html.DisplayFor(Modelitem => item.RentalPrice)</small>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        }
     </div>
 
+    <div class="card shadow" style="width:400px;">
+        <img class="card-img-top" style="height: 300px;" src="https://cdn.discordapp.com/attachments/754679426339569788/754963447841816606/sprinter-van.png" alt="Card image">
+        <div class="card-body">
+            <a class="h4 justify-content-center alert-link" asp-area="" asp-controller="Home" asp-action="NotImplemented">ALL VANS!</a>
+            <p class="card-text">For large cargo spaces!</p>
+        </div>
+    </div>
+    *
+    <div class="card shadow" style="width:400px;">
+        <img class="card-img-top" style="height: 300px;" src="https://cdn.discordapp.com/attachments/754679426339569788/762635934637883402/z17-gen-2-compact-excavator5a6af57c98c74f2a0d0beb27.png" alt="Card image">
+        <div class="card-body">
+            <a class="h4 justify-content-center alert-link" asp-area="" asp-controller="Home" asp-action="NotImplemented">ALL SPECIAL VEHICLES!</a>
+            <p class="card-text">For the heavy work!</p>
+        </div>
+    </div>
 </div>
+
+<br />
+
+<div class="card">
+    <div class="card-body shadow">
+        <h2 class="font-weight-bold text-center p-3">Our story and journey</h2>
+        <div class="row">
+            <div class="col-6 img-fluid"><img src="https://cdn.discordapp.com/attachments/754679426339569788/754981001041805352/5388649925046e7f14e61730fc9b7ccb.png" style="width:500px; height:350px;" /></div>
+            <div class="col-6 font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet vestibulum nulla. Suspendisse rutrum, lacus a placerat tempus, tellus velit efficitur leo, id tincidunt leo risus eget libero. Nulla vestibulum metus non neque ullamcorper, non ornare est aliquam. Maecenas in libero nec ipsum dapibus pellentesque sed eu mauris. Quisque dapibus leo fringilla lorem pulvinar volutpat. Sed commodo, nibh in condimentum ultricies, diam felis ultrices purus, sed aliquam libero felis et ligula. Fusce porta placerat dolor a imperdiet. Suspendisse dapibus, nisl sed consequat sollicitudin, erat diam porta metus, tempor sodales felis lectus non arcu. Aliquam ullamcorper sagittis pharetra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In laoreet accumsan lorem, vitae rhoncus nunc consequat pellentesque. In ac ligula metus. Nullam dui lorem, viverra vel aliquam sit amet, ultrices nec ante.</div>
+        </div>
+    </div>
+</div>
+<hr />
