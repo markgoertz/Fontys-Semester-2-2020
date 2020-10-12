@@ -1,0 +1,130 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_Interfaces\\Fontys S2 Project - Car to go_Interfaces.csproj": {}
+  },
+  "projects": {
+    "D:\\Fontys Semester 2 2020\\DTO layer\\DTO layer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Fontys Semester 2 2020\\DTO layer\\DTO layer.csproj",
+        "projectName": "DTO layer",
+        "projectPath": "D:\\Fontys Semester 2 2020\\DTO layer\\DTO layer.csproj",
+        "packagesPath": "C:\\Users\\goert\\.nuget\\packages\\",
+        "outputPath": "D:\\Fontys Semester 2 2020\\DTO layer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\goert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_Interfaces\\Fontys S2 Project - Car to go_Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_Interfaces\\Fontys S2 Project - Car to go_Interfaces.csproj",
+        "projectName": "Fontys S2 Project - Car to go_Interfaces",
+        "projectPath": "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_Interfaces\\Fontys S2 Project - Car to go_Interfaces.csproj",
+        "packagesPath": "C:\\Users\\goert\\.nuget\\packages\\",
+        "outputPath": "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\goert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Fontys Semester 2 2020\\DTO layer\\DTO layer.csproj": {
+                "projectPath": "D:\\Fontys Semester 2 2020\\DTO layer\\DTO layer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

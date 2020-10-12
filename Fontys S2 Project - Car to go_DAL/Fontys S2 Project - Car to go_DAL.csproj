@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Fontys_S2_Project___Car_to_go_DAL</RootNamespace>
+  </PropertyGroup>
+
+</Project>

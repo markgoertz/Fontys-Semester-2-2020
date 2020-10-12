@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Fontys S2 Project - Car to go_Interfaces/1.0.0": {
+        "runtime": {
+          "Fontys S2 Project - Car to go_Interfaces.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fontys S2 Project - Car to go_Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
