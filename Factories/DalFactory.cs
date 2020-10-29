@@ -7,16 +7,16 @@ namespace Factories
 {
     public static class DalFactory
     {
-        private static ICarDatabaseHandler _carHandler;
-        public static ICarDatabaseHandler CarHandler
+        private static IVehicleDatabaseHandler _vehicleHandler;
+        public static IVehicleDatabaseHandler VehicleHandler
         {
             get
             {
-                if (_carHandler == null)
+                if (_vehicleHandler == null)
                 {
-                    _carHandler = new CarDatabaseHandler(new DBConnectionHandler());
+                    _vehicleHandler = new VehicleDatabaseHandler(new DBConnectionHandler());
                 }
-                return _carHandler;
+                return _vehicleHandler;
             }
 
         }

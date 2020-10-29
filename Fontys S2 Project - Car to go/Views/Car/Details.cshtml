@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Fontys_S2_Project___Car_to_go.Models.VehicleViewModel>
+@{
+    ViewData["Title"] = "Details";
+    
+}
+
+@foreach (var car in Model)
+{
+   
+        <div class="container">
+
+            <h3 class="card-title font-weight-bolder text-center bg-primary p-5 m-5 text-white">@car.Brandname | @car.Modelname</h3>
+            <div class="row">
+                <div class="col-2">
+
+                </div>
+
+                <div class="col-8 pt-5 pb-5">
+                    <div class="img-fluid justify-content-center">
+                        <img class="img-fluid" style="width:auto; height:auto" src="@car.ImageLink" />
+                    </div>
+                </div>
+
+                <div class="col-2">
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col bg-primary m-1 p-3 border-white text-white shadow">
+                    <h5 class="font-weight-bold text-center text-white">Technical Information</h5>
+                    <p class="card-text font-weight-bold pl-3 pt-4">Power = @car.Enginepower HP</p>
+                    <p class="card-text font-weight-bold pl-3">Transmission: @car.Transmission</p>
+                    <p class="card-text font-weight-bold pl-3">Acceleration 0-100km/h in @car.Acceleration seconds</p>
+                    <p class="card-text font-weight-bold pl-3">Fueltype = @car.Fueltype</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m-1 p-3 border-white shadow">
+                    <h5 class="font-weight-bold text-center">Capacities Information</h5>
+
+                    <p class="card-text font-weight-bold pl-3 pt-4">Amount of seats: @car.Seat</p>
+                    <p class="card-text font-weight-bold pl-3">Cargospace = @car.Cargospace L</p>
+                    <p class="card-text font-weight-bold pl-3">Fueltype = @car.Fueltype</p>
+                </div>
+            </div>
+
+
+            <div class="card-footer w-100 text-muted pt-5">
+                <div class="row">
+
+                    <div class="col">
+                        <h5 class="card-text font-weight-bold">Rental price per day €@car.RentalPrice</h5>
+                    </div>
+
+                    <div class="col">
+
+                    </div>
+
+                    <div class="col">
+                        <form asp-controller="Reservation" asp-action="PlaceReservation" method="get">
+                            <input type="hidden" name="Id" value="@car.ID" />
+                            <button type="submit" class="btn btn-primary">Make a Reservation!</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    
+
+
+}

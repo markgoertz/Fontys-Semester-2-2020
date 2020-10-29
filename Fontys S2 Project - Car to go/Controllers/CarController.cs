@@ -10,20 +10,21 @@ namespace Car_to_go.Controllers
 {
     public class CarController : Controller
     {
-        private readonly CarCollection _coll;
+        private readonly VehicleCollection _coll;
+        private List<VehicleViewModel> VVM;
 
         public CarController()
         {
-            _coll = new CarCollection();
+            _coll = new VehicleCollection();
         }
         public IActionResult Index()
         {
             var all = _coll.GetAllCars();
-            var cars = new List<CarViewmodel>();
+            VVM = new List<VehicleViewModel>();
 
             foreach (var car in all)
             {
-                cars.Add(new CarViewmodel
+                VVM.Add(new VehicleViewModel
                 {
                     ID = car.ID,
                     Seat = car.Seat,
@@ -38,11 +39,45 @@ namespace Car_to_go.Controllers
                     Fueltype = car.Fueltype,
                     ImageLink = car.ImageLink
 
-
                 });
             }
-            return View(cars);
+            return View(VVM);
         }
 
+      
+        public ActionResult Details(int ID)
+        {
+            
+            var all = _coll.GetAllCars();
+            VVM = new List<VehicleViewModel>();
+
+            foreach (var car in all)
+            {
+                if (ID == car.ID)
+                {
+                    VVM.Add(new VehicleViewModel
+                    {
+                        ID = car.ID,
+                        Seat = car.Seat,
+                        Enginepower = car.Enginepower,
+                        Acceleration = car.Acceleration,
+                        Brandname = car.Brandname,
+                        Cargospace = car.Cargospace,
+                        Modelname = car.Modelname,
+                        RentalPrice = car.RentalPrice,
+                        Transmission = car.Transmission,
+                        Weight = car.Weight,
+                        Fueltype = car.Fueltype,
+                        ImageLink = car.ImageLink
+                    });
+                }
+                else
+                {
+                    
+                }
+            }
+            return View(VVM);
+
+        }
     }
 }

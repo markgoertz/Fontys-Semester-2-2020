@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Fontys_S2_Project___Car_to_go.Models.VehicleViewModel>
+
+@{
+    ViewData["Title"] = "View";
+}
+<h2 class="text-center p-3">All Cars in the system!</h2>
+
+@Html.ActionLink("Add new car to the system", "Create", "Admin")
+<div class="table-responsive">
+    <table class="table table-striped ">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Brandname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modelname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Transmission)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Enginepower)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Acceleration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cargospace)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Seat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RentalPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fueltype)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageLink)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brandname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modelname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Transmission)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Enginepower)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Acceleration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cargospace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RentalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fueltype)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImageLink)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryID)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Update", "Update", new { ID = item.ID })
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })
+                        @Html.ActionLink("Delete", "Delete", new { ID = item.ID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

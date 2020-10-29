@@ -10,8 +10,6 @@ namespace Interfaces.IHandlers
         void Create(T entity);
         void Update(T entity);
         void Delete(int id);
-        T GetById(int id);
-
-
+      
     }
 }

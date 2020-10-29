@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DTO_layer.Entities_DTO
 {
-    class VanDTO
+    public class VanDTO : VehicleDTO
     {
+        public int Tractivepower { get; set; }
     }
 }

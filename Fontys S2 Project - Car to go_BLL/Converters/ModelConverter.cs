@@ -1,53 +1,59 @@
-﻿using DTO_layer.Entities_DTO;
+﻿using BLL.Models;
+using DTO_layer;
+using DTO_layer.Entities_DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BLL.Converters
 {
-    public static class ModelConverter
+    public class ModelConverter
     {
-        private static Car _model;
-        private static CarDTO _dto;
-        public static Car ConvertDtoToModel(CarDTO dto)
+        private static Vehicle _model;
+        private static VehicleDTO _dto;
+        public static Vehicle ConvertDtoToModel(VehicleDTO dto)
         {
-            _model = new Car()
+            _model = new Vehicle()
             {
                 ID = dto.ID,
                 Seat = dto.Seat,
-                Acceleration = dto.Acceleration,
                 Brandname = dto.Brandname,
                 CategoryID = dto.CategoryID,
                 Cargospace = dto.Cargospace,
+                Acceleration = dto.Acceleration,
                 Enginepower = dto.Enginepower,
                 Fueltype = dto.Fueltype,
                 ImageLink = dto.ImageLink,
                 Modelname = dto.Modelname,
                 RentalPrice = dto.RentalPrice,
                 Transmission = dto.Transmission,
-                Weight  = dto.Weight
+                Weight  = dto.Weight,
+
+                
             };
 
             return _model;
         }
 
-        public static CarDTO ConvertModelToDto(Car model)
+        public static VehicleDTO ConvertModelToDto(Vehicle model)
         {
-            _dto = new CarDTO() 
-            { ID = model.ID, 
+            _dto = new VehicleDTO() 
+            { 
+              ID = model.ID, 
               Brandname= model.Brandname, 
               Modelname= model.Modelname, 
               CategoryID= model.CategoryID, 
               Seat= model.Seat, 
-              Acceleration= model.Acceleration, 
               Cargospace= model.Cargospace, 
               Enginepower= model.Enginepower,
+              Acceleration = model.Acceleration,
               Fueltype = model.Fueltype,
               ImageLink = model.ImageLink,
               RentalPrice = model.RentalPrice,
               Transmission = model.Transmission,
               Weight = model.Weight
             };
+
             return _dto;
         }
     }
