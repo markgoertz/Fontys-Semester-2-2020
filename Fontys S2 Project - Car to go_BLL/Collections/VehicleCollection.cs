@@ -11,7 +11,6 @@ namespace BLL
     {
         private List<Vehicle> vehicles;
         
-
         public void Create(Vehicle car)
         {
             var result = ModelConverter.ConvertModelToDto(car);

@@ -101,7 +101,7 @@
                     <td>
                         @Html.ActionLink("Update", "Update", new { ID = item.ID })
                         @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })
-                        @Html.ActionLink("Delete", "Delete", new { ID = item.ID })
+                        @Html.ActionLink("Delete", "Delete", new { ID = item.ID }, new { onclick = "return confirm('Are sure wants to delete?');" })
                     </td>
                 </tr>
             }

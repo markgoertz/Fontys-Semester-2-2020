@@ -44,40 +44,42 @@ namespace Car_to_go.Controllers
             return View(VVM);
         }
 
-      
-        public ActionResult Details(int ID)
+
+        public ActionResult Details(int? ID)
         {
-            
             var all = _coll.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
-            foreach (var car in all)
+            if (ID != null)
             {
-                if (ID == car.ID)
+                for (int i = 0; i < all.Count; i++)
                 {
-                    VVM.Add(new VehicleViewModel
+                    if (ID == all[i].ID)
                     {
-                        ID = car.ID,
-                        Seat = car.Seat,
-                        Enginepower = car.Enginepower,
-                        Acceleration = car.Acceleration,
-                        Brandname = car.Brandname,
-                        Cargospace = car.Cargospace,
-                        Modelname = car.Modelname,
-                        RentalPrice = car.RentalPrice,
-                        Transmission = car.Transmission,
-                        Weight = car.Weight,
-                        Fueltype = car.Fueltype,
-                        ImageLink = car.ImageLink
-                    });
-                }
-                else
-                {
-                    
+                        VVM.Add(new VehicleViewModel
+                        {
+                            ID = all[i].ID,
+                            Seat = all[i].Seat,
+                            Enginepower = all[i].Enginepower,
+                            Acceleration = all[i].Acceleration,
+                            Brandname = all[i].Brandname,
+                            Cargospace = all[i].Cargospace,
+                            Modelname = all[i].Modelname,
+                            RentalPrice = all[i].RentalPrice,
+                            Transmission = all[i].Transmission,
+                            Weight = all[i].Weight,
+                            Fueltype = all[i].Fueltype,
+                            ImageLink = all[i].ImageLink
+                        });
+                    }
                 }
             }
-            return View(VVM);
+            else
+            {
+                throw new ArgumentNullException("This works!");
+            }
 
+            return View(VVM);
         }
     }
 }

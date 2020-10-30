@@ -18,37 +18,7 @@ namespace DAL.Handler
             _dbCon = dbCon;
         }
 
-        public List<VehicleDTO> GetAll()
-        {
-            var cars = new List<VehicleDTO>();
-            using (_dbCon.Open())
-            {
-                string query = "SELECT * FROM Vehicle WHERE CategoryID = '1';";
-                using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
-                var reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    VehicleDTO CarDTO = new VehicleDTO
-                    {
-                        ID = reader.GetInt32(0),
-                        Brandname = reader.GetString(1),
-                        Modelname = reader.GetString(2),
-                        Transmission = reader.GetString(3),
-                        Enginepower = reader.GetInt32(4),
-                        Weight = reader.GetInt32(5),
-                        Acceleration = reader.GetDouble(6),
-                        Cargospace = reader.GetInt32(7),
-                        Seat = reader.GetInt32(8),
-                        RentalPrice = reader.GetDouble(9),
-                        Fueltype = reader.GetString(10),
-                        ImageLink = reader.GetString(11)
-                    };
-
-                    cars.Add(CarDTO);
-                }
-            }
-            return cars;
-        }
+/* CREATE ------------------------------------------- CREATE ------------------------------------------------------ CREATE --------------------------------------------------- CREATE ------------------------------------ CREATE*/
 
         public void Create(VehicleDTO C1)
         {
@@ -74,17 +44,43 @@ namespace DAL.Handler
             }
         }
 
-        public void Delete(int ID)
+/* READ ------------------------------------------- READ ------------------------------------------------------ READ --------------------------------------------------- READ ------------------------------------ READ*/
+
+        public List<VehicleDTO> GetAll()
         {
+            var cars = new List<VehicleDTO>();
             using (_dbCon.Open())
             {
-                string query = "DELETE FROM Vehicle WHERE ID=@ID";
+                string query = "SELECT * FROM Vehicle WHERE CategoryID = '1';";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    VehicleDTO CarDTO = new VehicleDTO
+                    {
+                        ID = reader.GetInt32(0),
+                        Brandname = reader.GetString(1),
+                        Modelname = reader.GetString(2),
+                        Transmission = reader.GetString(3),
+                        Enginepower = reader.GetInt32(4),
+                        Weight = reader.GetInt32(5),
+                        Acceleration = reader.GetDouble(6),
+                        Cargospace = reader.GetInt32(7),
+                        Seat = reader.GetInt32(8),
+                        RentalPrice = reader.GetDouble(9),
+                        Fueltype = reader.GetString(10),
+                        ImageLink = reader.GetString(11),
+                        CategoryID = reader.GetInt32(12)
+                    };
 
-                command.Parameters.AddWithValue("@ID", ID);
-                command.ExecuteNonQuery();
+                    cars.Add(CarDTO);
+                }
             }
+            return cars;
         }
+
+/* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
+
 
         public void Update(VehicleDTO U1)
         {
@@ -111,16 +107,18 @@ namespace DAL.Handler
             }
         }
 
-        public VehicleDTO GetById(int id)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM vehicle WHERE ID = @ID; ";
-                using SqlCommand command = new SqlCommand(query, connection);
+/* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
 
-                command.Parameters.AddWithValue("@ID", id);
+        public void Delete(int ID)
+        {
+            using (_dbCon.Open())
+            {
+                string query = "DELETE FROM Vehicle WHERE ID=@ID";
+                using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
+
+                command.Parameters.AddWithValue("@ID", ID);
+                command.ExecuteNonQuery();
             }
-            return new VehicleDTO();
         }
 
     }

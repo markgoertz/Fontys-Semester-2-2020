@@ -9,7 +9,6 @@ namespace Interfaces.IHandlers
 {
     public interface IVehicleDatabaseHandler : IHandlerGeneric<VehicleDTO>
     { 
-        VehicleDTO GetById(int id);
-        
+       
     }
 }

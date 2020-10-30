@@ -74,13 +74,12 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public ActionResult Update(int ID)
         {
             var all = _coll.GetAllCars();
-            var viewmodel = new List<VehicleViewModel>();
-
+         
             foreach (var car in all)
             {
                 if (ID == car.ID)
                 {
-                    viewmodel.Add(new VehicleViewModel
+                    var carvm = new Vehicle()
                     {
                         ID = car.ID,
                         Seat = car.Seat,
@@ -95,24 +94,24 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                         Fueltype = car.Fueltype,
                         ImageLink = car.ImageLink,
                         CategoryID = car.CategoryID
-                    });
+                    };
+
+                    return View(carvm);
                 }
-               
+
             }
-
-            return View(viewmodel);
-
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Update(Vehicle Edit)
+        public ActionResult Update(Vehicle vehicleViewModel)
         {
-            vehicle.Edit(Edit);
+             vehicle.Edit(vehicleViewModel);
             return RedirectToAction("Index");
         }
 
 
-/* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
+        /* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
 
         public IActionResult Delete(int ID)
         {           
