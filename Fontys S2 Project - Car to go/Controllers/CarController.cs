@@ -50,10 +50,13 @@ namespace Car_to_go.Controllers
             var all = _coll.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
+            //If the ID isn't equil to Null-value, the if-statement is executed.
             if (ID != null)
             {
+                //Here it count with int 'i' and it keeps counting 'til the max value of all is counted.
                 for (int i = 0; i < all.Count; i++)
                 {
+                    //When ID is equil to all; the program will 'copy' all values of Vehicleviewmodel and add it to VVM.
                     if (ID == all[i].ID)
                     {
                         VVM.Add(new VehicleViewModel
@@ -76,7 +79,7 @@ namespace Car_to_go.Controllers
             }
             else
             {
-                throw new ArgumentNullException("This works!");
+                throw new Exception();
             }
 
             return View(VVM);
