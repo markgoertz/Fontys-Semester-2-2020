@@ -38,13 +38,14 @@ namespace Car_to_go.Controllers
                     Weight = car.Weight,
                     Fueltype = car.Fueltype,
                     ImageLink = car.ImageLink
-
+                                        
                 });
+                
             }
             return View(VVM);
         }
 
-
+        
         public ActionResult Details(int? ID)
         {
             var all = _coll.GetAllCars();

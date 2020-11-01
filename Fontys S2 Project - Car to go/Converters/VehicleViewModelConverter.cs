@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Fontys_S2_Project___Car_to_go.Models
+namespace Fontys_S2_Project___Car_to_go.Converters
 {
     public class ModelConverter
     {
