@@ -43,7 +43,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                     Weight = car.Weight,
                     Fueltype = car.Fueltype,
                     ImageLink = car.ImageLink,
-                    CategoryID = car.CategoryID
+                    CategoryID = (VehicleViewModel.Category)car.CategoryID
 
                 });
             }
@@ -79,7 +79,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             {
                 if (ID == car.ID)
                 {
-                    var carvm = new Vehicle()
+                    var carvm = new VehicleViewModel()
                     {
                         ID = car.ID,
                         Seat = car.Seat,
@@ -93,7 +93,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                         Weight = car.Weight,
                         Fueltype = car.Fueltype,
                         ImageLink = car.ImageLink,
-                        CategoryID = car.CategoryID
+                        CategoryID = (VehicleViewModel.Category)car.CategoryID
                     };
 
                     return View(carvm);

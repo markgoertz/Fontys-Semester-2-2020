@@ -36,28 +36,6 @@ namespace Car_to_go.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> Login(string username, string password, string ReturnUrl)
-        {
-            if ((username == "Admin") && (password == "Admin"))
-            {
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, username)
-                };
-                var claimsIdentity = new ClaimsIdentity(claims, "Login");
-
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                return Redirect(ReturnUrl == null ? "/Secured" : ReturnUrl);
-            }
-            else
-                return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

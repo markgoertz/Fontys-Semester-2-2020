@@ -80,7 +80,7 @@ namespace Car_to_go.Controllers
             }
             else
             {
-                throw new Exception();
+                //Hier kan een exception komen voor meer voortgang.
             }
 
             return View(VVM);

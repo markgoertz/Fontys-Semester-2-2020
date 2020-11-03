@@ -66,7 +66,13 @@ namespace Fontys_S2_Project___Car_to_go.Models
         public string ImageLink { get; set; }
 
         [Required(ErrorMessage = "This field is required, you have to pick a category!")]
-        public int CategoryID { get; set; }
+        public Category CategoryID { get; set; }
 
+        public enum Category
+        {
+            Car = 1,
+            Van = 2,
+            Special = 3
+        }
     }
 }

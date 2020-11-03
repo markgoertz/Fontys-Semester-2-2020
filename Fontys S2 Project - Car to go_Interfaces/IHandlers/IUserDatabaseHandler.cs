@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Car_to_go_Interfaces.IHandlers
+namespace Interfaces.IHandlers
 {
     public interface IUserDatabaseHandler : IHandlerGeneric<UserDTO>
     {
-
+        List<UserDTO> Login(string email, string password);
     }
 }

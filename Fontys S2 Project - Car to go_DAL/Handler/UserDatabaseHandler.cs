@@ -1,13 +1,14 @@
-﻿using DTO_layer.Entities_DTO;
+﻿using Interfaces.IHandlers;
+using DTO_layer.Entities_DTO;
 using Interfaces.IDBconnectionHandler;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace Car_to_go_DAL.Handler
+namespace DAL.Handler
 {
-    public class UserDatabaseHandler
+    public class UserDatabaseHandler : IUserDatabaseHandler
     {
         private static readonly string connectionString = "";
         private readonly IDBConnectionHandler _dbCon;
@@ -16,13 +17,13 @@ namespace Car_to_go_DAL.Handler
             _dbCon = dbCon;
         }
 
-        /* CREATE ------------------------------------------- CREATE ------------------------------------------------------ CREATE --------------------------------------------------- CREATE ------------------------------------ CREATE*/
+/* CREATE ------------------------------------------- CREATE ------------------------------------------------------ CREATE --------------------------------------------------- CREATE ------------------------------------ CREATE*/
 
         public void Create(UserDTO C1)
         {
             using (_dbCon.Open())
             {
-                string query = "Insert into User (Firstname, Lastname, Postalcode, Adres, Housenumber, Email, Role) Values (@Firstname, @Lastname, @Postalcode, @Adres,@Housenumber, @Email, @Role);";
+                string query = "INSERT INTO [dbo].[User] (Firstname, Lastname, Postalcode, Adres, Housenumber, Email, Role) VALUES (@Firstname, @Lastname, @Postalcode, @Adres, @Housenumber, @Email, @Role);";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
 
                 command.Parameters.AddWithValue("@Firstname", C1.Firstname);
@@ -37,68 +38,93 @@ namespace Car_to_go_DAL.Handler
             }
         }
 
-        /* READ ------------------------------------------- READ ------------------------------------------------------ READ --------------------------------------------------- READ ------------------------------------ READ*/
+/* READ ------------------------------------------- READ ------------------------------------------------------ READ --------------------------------------------------- READ ------------------------------------ READ*/
 
-        //public List<UserDTO> GetAll()
-        //{
-        //    var users = new List<UserDTO>();
-        //    using (_dbCon.Open())
-        //    {
-        //        string query = "SELECT * FROM Vehicle WHERE CategoryID = '1';";
-        //        using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
-        //        var reader = command.ExecuteReader();
-        //        while (reader.Read())
-        //        {
-        //            UserDTO UserDTO = new UserDTO
-        //            {
-        //                ID = reader.GetInt32(0),
-        //                Brandname = reader.GetString(1),
-        //                Modelname = reader.GetString(2),
-        //                Transmission = reader.GetString(3),
-        //                Enginepower = reader.GetInt32(4),
-        //                Weight = reader.GetInt32(5),
-        //                Acceleration = reader.GetDouble(6),
-        //                Cargospace = reader.GetInt32(7),
-        //                Seat = reader.GetInt32(8),
-        //                RentalPrice = reader.GetDouble(9),
-        //                Fueltype = reader.GetString(10),
-        //                ImageLink = reader.GetString(11),
-        //                CategoryID = reader.GetInt32(12)
-        //            };
+        public List<UserDTO> GetAll()
+        {
+            var users = new List<UserDTO>();
+            using (_dbCon.Open())
+            {
+                string query = "SELECT * FROM User";
+                using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    UserDTO UserDTO = new UserDTO
+                    {
+                        ID = reader.GetInt32(0),
+                        Firstname = reader.GetString(1),
+                        Lastname = reader.GetString(2),
+                        Postalcode= reader.GetString(3),
+                        Adres= reader.GetString(4),
+                        Housenumber = reader.GetInt32(5),
+                        Email = reader.GetString(6),
+                        Role = reader.GetString(7),
+                    };
 
-        //            users.Add(UserDTO);
-        //        }
-        //    }
-        //    return users;
-        //}
+                    users.Add(UserDTO);
+                }
+            }
+            return users;
+        }
+
+/* LogIn ------------------------------------------- READ ------------------------------------------------------ READ --------------------------------------------------- READ ------------------------------------ READ*/
+
+        public List<UserDTO>Login(string password, string email)
+        {
+            var users = new List<UserDTO>();
+            using (_dbCon.Open())
+            {
+                string query = "SELECT * FROM User WHERE Email = @Email";
+                using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    UserDTO UserDTO = new UserDTO
+                    {
+                        ID = reader.GetInt32(0),
+                        Firstname = reader.GetString(1),
+                        Lastname = reader.GetString(2),
+                        Postalcode = reader.GetString(3),
+                        Adres = reader.GetString(4),
+                        Housenumber = reader.GetInt32(5),
+                        Email = reader.GetString(6),
+                        Role = reader.GetString(7),
+                    };
+
+                    users.Add(UserDTO);
+                }
+            }
+            return users;
+        }
 
         /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
 
 
-        //public void Update(UserDTO U1)
-        //{
-        //    using (_dbCon.Open())
-        //    {
-        //        string query = "UPDATE Vehicle Set Brandname = @Brandname, Modelname = @Modelname, Transmission = @Transmission, Enginepower = @Enginepower, Weight = @Weight, Acceleration = @Acceleration, Cargospace = @Cargospace, Seat = @Seat, Rentalprice = @Rentalprice, Fueltype = @Fueltype, ImageLink = @ImageLink WHERE ID = @ID;";
-        //        using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
+        public void Update(UserDTO U1)
+        {
+            using (_dbCon.Open())
+            {
+                //string query = "UPDATE Vehicle Set Brandname = @Brandname, Modelname = @Modelname, Transmission = @Transmission, Enginepower = @Enginepower, Weight = @Weight, Acceleration = @Acceleration, Cargospace = @Cargospace, Seat = @Seat, Rentalprice = @Rentalprice, Fueltype = @Fueltype, ImageLink = @ImageLink WHERE ID = @ID;";
+                //using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
 
-        //        command.Parameters.AddWithValue("@ID", U1.ID);
-        //        command.Parameters.AddWithValue("@Brandname", U1.Brandname);
-        //        command.Parameters.AddWithValue("@Modelname", U1.Modelname);
-        //        command.Parameters.AddWithValue("@Transmission", U1.Transmission);
-        //        command.Parameters.AddWithValue("@Enginepower", U1.Enginepower);
-        //        command.Parameters.AddWithValue("@Weight", U1.Weight);
-        //        command.Parameters.AddWithValue("@Acceleration", U1.Acceleration);
-        //        command.Parameters.AddWithValue("@Cargospace", U1.Cargospace);
-        //        command.Parameters.AddWithValue("@Seat", U1.Seat);
-        //        command.Parameters.AddWithValue("@Rentalprice", U1.RentalPrice);
-        //        command.Parameters.AddWithValue("@Fueltype", U1.Fueltype);
-        //        command.Parameters.AddWithValue("@ImageLink", U1.ImageLink);
-        //        command.Parameters.AddWithValue("@CategoryID", U1.CategoryID);
+                //command.Parameters.AddWithValue("@ID", U1.ID);
+                //command.Parameters.AddWithValue("@Brandname", U1.Brandname);
+                //command.Parameters.AddWithValue("@Modelname", U1.Modelname);
+                //command.Parameters.AddWithValue("@Transmission", U1.Transmission);
+                //command.Parameters.AddWithValue("@Enginepower", U1.Enginepower);
+                //command.Parameters.AddWithValue("@Weight", U1.Weight);
+                //command.Parameters.AddWithValue("@Acceleration", U1.Acceleration);
+                //command.Parameters.AddWithValue("@Cargospace", U1.Cargospace);
+                //command.Parameters.AddWithValue("@Seat", U1.Seat);
+                //command.Parameters.AddWithValue("@Rentalprice", U1.RentalPrice);
+                //command.Parameters.AddWithValue("@Fueltype", U1.Fueltype);
+                //command.Parameters.AddWithValue("@ImageLink", U1.ImageLink);
+                //command.Parameters.AddWithValue("@CategoryID", U1.CategoryID);
 
-        //        command.ExecuteNonQuery();
-        //    }
-        //}
+                //command.ExecuteNonQuery();
+            }
+        }
 
         /* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
 
@@ -106,7 +132,7 @@ namespace Car_to_go_DAL.Handler
         {
             using (_dbCon.Open())
             {
-                string query = "DELETE FROM Vehicle WHERE ID=@ID";
+                string query = "DELETE FROM User WHERE ID=@ID";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
 
                 command.Parameters.AddWithValue("@ID", ID);
