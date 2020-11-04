@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
+using System.Data;
 
 namespace DAL.Handler
 {
@@ -23,7 +24,7 @@ namespace DAL.Handler
         {
             using (_dbCon.Open())
             {
-                string query = "INSERT INTO [dbo].[User] (Firstname, Lastname, Postalcode, Adres, Housenumber, Email, Role) VALUES (@Firstname, @Lastname, @Postalcode, @Adres, @Housenumber, @Email, @Role);";
+                string query = "INSERT INTO [dbo].[User] (Firstname, Lastname, Postalcode, Adres, Housenumber, Email, Role, Password) VALUES (@Firstname, @Lastname, @Postalcode, @Adres, @Housenumber, @Email, @Role, @Password);";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
 
                 command.Parameters.AddWithValue("@Firstname", C1.Firstname);
@@ -33,6 +34,7 @@ namespace DAL.Handler
                 command.Parameters.AddWithValue("@Housenumber", C1.Housenumber);
                 command.Parameters.AddWithValue("@Email", C1.Email);
                 command.Parameters.AddWithValue("@Role", C1.Role);
+                command.Parameters.AddWithValue("@Password", C1.Password);
 
                 command.ExecuteNonQuery();
             }
@@ -70,32 +72,21 @@ namespace DAL.Handler
 
 /* LogIn ------------------------------------------- READ ------------------------------------------------------ READ --------------------------------------------------- READ ------------------------------------ READ*/
 
-        public List<UserDTO>Login(string password, string email)
+        public string Login(UserDTO user)
         {
-            var users = new List<UserDTO>();
             using (_dbCon.Open())
             {
-                string query = "SELECT * FROM User WHERE Email = @Email";
-                using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
-                var reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    UserDTO UserDTO = new UserDTO
-                    {
-                        ID = reader.GetInt32(0),
-                        Firstname = reader.GetString(1),
-                        Lastname = reader.GetString(2),
-                        Postalcode = reader.GetString(3),
-                        Adres = reader.GetString(4),
-                        Housenumber = reader.GetInt32(5),
-                        Email = reader.GetString(6),
-                        Role = reader.GetString(7),
-                    };
+        
+                using SqlCommand command = new SqlCommand("spValidateUserLogin", _dbCon.Connection);
+                command.CommandType = CommandType.StoredProcedure;
 
-                    users.Add(UserDTO);
-                }
+                command.Parameters.AddWithValue("@LoginEmail", user.Email);
+                command.Parameters.AddWithValue("@LoginPassword", user.Password);
+
+                string result = command.ExecuteScalar().ToString();
+
+                return result;
             }
-            return users;
         }
 
         /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/

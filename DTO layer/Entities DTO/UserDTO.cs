@@ -14,5 +14,6 @@ namespace DTO_layer.Entities_DTO
         public int Housenumber { get; set; }
         public string Email { get; set; }
         public string Role { get; set; }
+        public string Password { get; set; }
     }
 }

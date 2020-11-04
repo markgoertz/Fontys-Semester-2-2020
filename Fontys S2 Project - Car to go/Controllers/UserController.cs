@@ -13,38 +13,60 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 {
     public class UserController : Controller
     {
-        private User _user;
-        private readonly User _coll;
+        
+        private readonly User _user;
         public UserController()
         {
-            _coll = new User();
+            _user = new User();
         }
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult LoginPage()
+        [HttpGet]
+        public IActionResult UserLogin()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> Login(string username, string password, string ReturnUrl)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UserLogin([Bind] User user)
         {
+            ModelState.Remove("ID");
+            ModelState.Remove("FirstName");
+            ModelState.Remove("LastName");
+            ModelState.Remove("Postalcode");
+            ModelState.Remove("Housenumber");
+            ModelState.Remove("Adres");
+            ModelState.Remove("Role");
 
-            if ((username == "Admin") && (password == "Admin"))
+            if (ModelState.IsValid)
             {
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, username)
-                };
-                var claimsIdentity = new ClaimsIdentity(claims, "Login");
+                string LoginStatus = _user.ValidateLogin(user);
 
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                return Redirect(ReturnUrl == null ? "/Secured" : ReturnUrl);
+                if (LoginStatus == "Success")
+                {
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, user.Email)
+                    };
+                    ClaimsIdentity userIdentity = new ClaimsIdentity(claims, "login");
+                    ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
+
+                    await HttpContext.SignInAsync(principal);
+                    return RedirectToAction("Index", "User");
+                }
+                else
+                {
+                    TempData["UserLoginFailed"] = "Login Failed.Please enter correct credentials";
+                    return View();
+                }
             }
             else
                 return View();
+
         }
         [HttpGet]
         public IActionResult CreateAccount()
@@ -56,9 +78,15 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult CreateAccount(User user)
         {
-            _coll.Create(user);
+            _user.Create(user);
             return RedirectToAction("Index");
 
+        }
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("UserLogin", "User");
         }
 
     }

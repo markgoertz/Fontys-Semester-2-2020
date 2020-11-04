@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/mwcZbk9vn7B3G9m3HhLYeZWo9ODPmBB3o+clc3wWO83KuGYIcMKiKCIYAfP5fbjLO+Y3lIxC1GlxO/xhRKV7w==",
+  "dgSpecHash": "gAEfrZ68U3PQgYnXEsTs2fR/xZSmcLIY+CbXukaB7xEZYsh/hkCVd093sxOLVvCAOeLMeqITKY8uf3qvfZxJmA==",
   "success": true,
   "projectFilePath": "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_BLL\\Fontys S2 Project - Car to go_BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\goert\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\goert\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\portable.bouncycastle.1.8.8.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

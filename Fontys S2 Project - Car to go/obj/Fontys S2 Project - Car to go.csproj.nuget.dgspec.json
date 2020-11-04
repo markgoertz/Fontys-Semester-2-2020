@@ -236,6 +236,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Portable.BouncyCastle": {
+              "target": "Package",
+              "version": "[1.8.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

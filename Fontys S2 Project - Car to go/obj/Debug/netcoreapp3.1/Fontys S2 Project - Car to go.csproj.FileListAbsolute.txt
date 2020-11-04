@@ -130,5 +130,8 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Update.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
-D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\CreateAccount.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_loginpartial.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\UserLogin.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs

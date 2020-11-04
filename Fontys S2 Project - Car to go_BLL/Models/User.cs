@@ -9,7 +9,8 @@ namespace BLL.Models
 {
     public class User
     { 
-        private List<UserDTO> _user;
+        private UserDTO _user;
+
         public int ID { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
@@ -18,11 +19,21 @@ namespace BLL.Models
         public int Housenumber { get; set; }
         public string Email { get; set; }
         public string Role { get; set; }
+        public string Password { get; set; }
 
         public void Create(User user)
         {
             var result = UserModelConverter.ConvertModelToDto(user);
             DalFactory.userDatabaseHandler.Create(result);
         }
+
+        public string ValidateLogin(User user)
+        {
+            var result = UserModelConverter.ConvertModelToDto(user);
+            string userresult = DalFactory.userDatabaseHandler.Login(result);
+            return userresult;
+        }
+
+        
     }
 }

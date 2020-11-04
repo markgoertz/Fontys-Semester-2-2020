@@ -21,7 +21,8 @@ namespace BLL.Converters
                 Postalcode = dto.Postalcode,
                 Email = dto.Email,
                 Housenumber = dto.Housenumber,
-                Role = dto.Role
+                Role = dto.Role,
+                Password = dto.Password
             };
 
             return _model;
@@ -38,7 +39,8 @@ namespace BLL.Converters
                 Postalcode = model.Postalcode,
                 Email = model.Email,
                 Housenumber = model.Housenumber,
-                Role = model.Role
+                Role = model.Role,
+                Password = model.Password
             };
 
             return _dto;

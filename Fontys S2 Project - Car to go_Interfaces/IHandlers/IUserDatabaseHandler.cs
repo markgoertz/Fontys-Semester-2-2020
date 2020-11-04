@@ -8,6 +8,6 @@ namespace Interfaces.IHandlers
 {
     public interface IUserDatabaseHandler : IHandlerGeneric<UserDTO>
     {
-        List<UserDTO> Login(string email, string password);
+        string Login(UserDTO user);
     }
 }

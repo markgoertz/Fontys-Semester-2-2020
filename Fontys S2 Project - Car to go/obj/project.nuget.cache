@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gyN+/AxNaP+GqW54TXUFuHln+OEniQnCXyC8yM75Tnl0UfA/yxVXRVKF8TCpIKw7f9F7104V5Y27ucF2YaihUA==",
+  "dgSpecHash": "d1Uf5cpwSVz1x6QirZYqSSA4VTv1IV5/HnrElHe5RYWZyzFeGSF7j7rdcB9tBjZgMLzxdY8GmCK3pRBcfgxaKA==",
   "success": true,
   "projectFilePath": "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go\\Fontys S2 Project - Car to go.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\goert\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
+    "C:\\Users\\goert\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\portable.bouncycastle.1.8.8.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\goert\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
