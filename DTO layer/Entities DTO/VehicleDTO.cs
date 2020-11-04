@@ -9,8 +9,8 @@ namespace DTO_layer
         public string Modelname { get; set; }
         public string Transmission { get; set; }
         public int Enginepower { get; set; }
-        public double Acceleration { get; set; }
         public int Weight { get; set; }
+        public double Acceleration { get; set; }
         public int Cargospace { get; set; }
         public int Seat { get; set; }
         public double RentalPrice { get; set; }

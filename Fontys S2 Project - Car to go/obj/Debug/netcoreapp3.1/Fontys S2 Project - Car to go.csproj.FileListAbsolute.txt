@@ -48,10 +48,8 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\staticwebassets\Fontys S2 Project - Car to go.StaticWebAssets.Manifest.cache
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\staticwebassets\Fontys S2 Project - Car to go.StaticWebAssets.xml
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go.genruntimeconfig.cache
-D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Car\Index.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Home\Location.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Home\NotImplemented.cshtml.g.cs
-D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Car\Details.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -136,3 +134,7 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\UserLogin.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\AccessDenied.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\CarIndex.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Details.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\_LayoutPartial.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VanIndex.cshtml.g.cs

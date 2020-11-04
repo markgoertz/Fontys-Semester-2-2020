@@ -45,7 +45,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                     Weight = car.Weight,
                     Fueltype = car.Fueltype,
                     ImageLink = car.ImageLink,
-                    CategoryID = (VehicleViewModel.Category)car.CategoryID
+                    CategoryID = car.CategoryID
 
                 });
             }
@@ -95,7 +95,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                         Weight = car.Weight,
                         Fueltype = car.Fueltype,
                         ImageLink = car.ImageLink,
-                        CategoryID = (VehicleViewModel.Category)car.CategoryID
+                        CategoryID = car.CategoryID
                     };
 
                     return View(carvm);

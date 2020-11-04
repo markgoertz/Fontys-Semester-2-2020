@@ -44,19 +44,19 @@ namespace DAL.Handler
             }
         }
 
-/* READ ------------------------------------------- READ ------------------------------------------------------ READ --------------------------------------------------- READ ------------------------------------ READ*/
+        /* READ ------------------------------------------- READ ------------------------------------------------------ READ --------------------------------------------------- READ ------------------------------------ READ*/
 
         public List<VehicleDTO> GetAll()
         {
-            var cars = new List<VehicleDTO>();
+            var vehicles = new List<VehicleDTO>();
             using (_dbCon.Open())
             {
-                string query = "SELECT * FROM Vehicle WHERE CategoryID = '1';";
+                string query = "SELECT * FROM [Dbo].[Vehicle]";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    VehicleDTO CarDTO = new VehicleDTO
+                    VehicleDTO vehicle = new VehicleDTO
                     {
                         ID = reader.GetInt32(0),
                         Brandname = reader.GetString(1),
@@ -73,12 +73,16 @@ namespace DAL.Handler
                         CategoryID = reader.GetInt32(12)
                     };
 
-                    cars.Add(CarDTO);
+                    vehicles.Add(vehicle);
                 }
             }
-            return cars;
+            return vehicles;
         }
 
+
+
+
+        
 /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
 
 
