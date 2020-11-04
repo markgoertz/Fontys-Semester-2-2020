@@ -47,7 +47,7 @@ namespace DAL.Handler
             var users = new List<UserDTO>();
             using (_dbCon.Open())
             {
-                string query = "SELECT * FROM User";
+                string query = "SELECT * FROM [Dbo].[User]";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -62,6 +62,7 @@ namespace DAL.Handler
                         Housenumber = reader.GetInt32(5),
                         Email = reader.GetString(6),
                         Role = reader.GetString(7),
+                        Password = reader.GetString(8)
                     };
 
                     users.Add(UserDTO);
@@ -76,20 +77,52 @@ namespace DAL.Handler
         {
             using (_dbCon.Open())
             {
-        
+                
                 using SqlCommand command = new SqlCommand("spValidateUserLogin", _dbCon.Connection);
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("@LoginEmail", user.Email);
                 command.Parameters.AddWithValue("@LoginPassword", user.Password);
-
+               
                 string result = command.ExecuteScalar().ToString();
 
                 return result;
             }
         }
 
-        /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
+/* GetbyEmail ------------------------------------------- GetbyEmail ------------------------------------------------------ GetbyEmail --------------------------------------------------- GetbyEmail ------------------------------------ GetbyEmail*/
+
+        //public List<UserDTO> GetByEmail(string email)
+        //{
+        //    var users = new List<UserDTO>();
+        //    using (_dbCon.Open())
+        //    {
+        //        string query = "SELECT * FROM User WHERE email = @Email";
+        //        using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
+        //        var reader = command.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            UserDTO UserDTO = new UserDTO
+        //            {
+        //                ID = reader.GetInt32(0),
+        //                Firstname = reader.GetString(1),
+        //                Lastname = reader.GetString(2),
+        //                Postalcode = reader.GetString(3),
+        //                Adres = reader.GetString(4),
+        //                Housenumber = reader.GetInt32(5),
+        //                Email = reader.GetString(6),
+        //                Role = reader.GetString(7),
+        //                Password = reader.GetString(8)
+        //            };
+
+        //            users.Add(UserDTO);
+        //        }
+        //    }
+        //    return users;
+        //}
+
+
+ /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
 
 
         public void Update(UserDTO U1)

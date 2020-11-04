@@ -10,6 +10,7 @@ namespace BLL.Models
     public class User
     { 
         private UserDTO _user;
+        private List<User> users;
 
         public int ID { get; set; }
         public string Firstname { get; set; }
@@ -34,6 +35,17 @@ namespace BLL.Models
             return userresult;
         }
 
-        
+        public List<User> GetUsers()
+        {
+            var result = DalFactory.userDatabaseHandler.GetAll();
+            users = new List<User>();
+
+            foreach (var dto in result)
+            {
+                var model = UserModelConverter.ConvertDtoToModel(dto);
+                users.Add(model);
+            }
+            return users;
+        }
     }
 }

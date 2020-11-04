@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using BLL;
 using BLL.Models;
 using Fontys_S2_Project___Car_to_go.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fontys_S2_Project___Car_to_go.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly VehicleCollection _coll;
