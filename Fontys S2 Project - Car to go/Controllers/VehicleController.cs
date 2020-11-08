@@ -11,15 +11,17 @@ namespace Car_to_go.Controllers
     public class VehicleController : Controller
     {
         private readonly VehicleCollection _coll;
+        private readonly VehicleGetall vehicleGetall;
         private List<VehicleViewModel> VVM;
 
         public VehicleController()
         {
             _coll = new VehicleCollection();
+            vehicleGetall = new VehicleGetall();
         }
         public IActionResult CarIndex()
         {
-            var all = _coll.GetAllCars();
+            var all = vehicleGetall.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var vehicle in all)
@@ -53,7 +55,7 @@ namespace Car_to_go.Controllers
 
         public IActionResult VanIndex()
         {
-            var all = _coll.GetAllCars();
+            var all = vehicleGetall.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var car in all)
@@ -87,7 +89,7 @@ namespace Car_to_go.Controllers
 
         public IActionResult SpecialIndex()
         {
-            var all = _coll.GetAllCars();
+            var all = vehicleGetall.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var car in all)
@@ -122,7 +124,7 @@ namespace Car_to_go.Controllers
 
         public ActionResult Details(int? ID)
         {
-            var all = _coll.GetAllCars();
+            var all = vehicleGetall.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             //If the ID isn't equil to Null-value, the if-statement is executed.

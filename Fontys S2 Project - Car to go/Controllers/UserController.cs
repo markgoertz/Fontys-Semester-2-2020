@@ -89,13 +89,11 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                             }
                         }
                     }
-
-
-                    else
-                    {
-                        TempData["UserLoginFailed"] = "Login Failed.Please enter correct credentials";
-                        return View();
-                    }
+                }
+                else
+                {
+                    TempData["UserLoginFailed"] = "Login Failed.Please enter correct credentials";
+                    return View();
                 }
             }
             return View();
@@ -123,6 +121,11 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             TempData["UserLogout"] = "You have logged out!";
             await HttpContext.SignOutAsync();
             return RedirectToAction("UserLogin", "User");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -15,18 +15,20 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
     {
         private readonly VehicleCollection _coll;
         private readonly Vehicle vehicle;
+        private readonly VehicleGetall vehicleGetall;
         private List<VehicleViewModel> VVM;
         public AdminController()
         {
             _coll = new VehicleCollection();
             vehicle = new Vehicle();
+            vehicleGetall = new VehicleGetall();
         }
 
 /* INDEX ------------------------------------------- INDEX ------------------------------------------------------ INDEX --------------------------------------------------- INDEX ------------------------------------ INDEX*/
 
         public IActionResult Index()
         {
-            var all = _coll.GetAllCars();
+            var all = vehicleGetall.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var car in all)
@@ -75,7 +77,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpGet]
         public ActionResult Update(int ID)
         {
-            var all = _coll.GetAllCars();
+            var all = vehicleGetall.GetAllCars();
          
             foreach (var car in all)
             {

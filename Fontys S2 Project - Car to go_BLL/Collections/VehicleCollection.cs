@@ -9,14 +9,18 @@ namespace BLL
 {
     public class VehicleCollection
     {
-        private List<Vehicle> vehicles;
-        
         public void Create(Vehicle car)
         {
             var result = ModelConverter.ConvertModelToDto(car);
             DalFactory.VehicleHandler.Create(result);
         }
 
+        
+    }
+
+    public class VehicleGetall
+    {
+        private List<Vehicle> vehicles;
         public List<Vehicle> GetAllCars()
         {
             var result = DalFactory.VehicleHandler.GetAll();

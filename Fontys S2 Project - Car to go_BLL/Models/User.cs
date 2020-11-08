@@ -33,6 +33,7 @@ namespace BLL.Models
             var result = UserModelConverter.ConvertModelToDto(user);
             string userresult = DalFactory.userDatabaseHandler.Login(result);
             return userresult;
+            
         }
 
         public List<User> GetUsers()

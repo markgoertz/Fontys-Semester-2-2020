@@ -13,7 +13,6 @@ namespace Factories
         {
             get
             {
-                if (_vehicleHandler == null)
                 {
                     _vehicleHandler = new VehicleDatabaseHandler(new DBConnectionHandler());
                 }
@@ -25,8 +24,7 @@ namespace Factories
         public static IUserDatabaseHandler userDatabaseHandler
         {
             get
-            {
-                if (_userHandler == null)
+            {            
                 {
                     _userHandler = new UserDatabaseHandler(new DBConnectionHandler());
                 }
