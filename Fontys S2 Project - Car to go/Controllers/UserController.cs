@@ -79,7 +79,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                                 var claims = new List<Claim>
                                 {
                                     new Claim(ClaimTypes.Email, user.Email),
-                                    new Claim(ClaimTypes.Role, all[i].Role)
+                                    new Claim(ClaimTypes.Role, all[i].Role),
                                 };
                                 ClaimsIdentity userIdentity = new ClaimsIdentity(claims, "login");
                                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);

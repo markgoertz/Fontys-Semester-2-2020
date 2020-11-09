@@ -14,8 +14,6 @@ namespace BLL
             var result = ModelConverter.ConvertModelToDto(car);
             DalFactory.VehicleHandler.Create(result);
         }
-
-        
     }
 
     public class VehicleGetall

@@ -7,9 +7,10 @@ namespace Factories
 {
     public static class DalFactory
     {
-        private static IVehicleDatabaseHandler _vehicleHandler;
-        private static IUserDatabaseHandler _userHandler;
-        public static IVehicleDatabaseHandler VehicleHandler
+        private static IVehicleHandler _vehicleHandler;
+        private static IUserHandler _userHandler;
+        private static IReservationHandler _reservationHandler;
+        public static IVehicleHandler VehicleHandler
         {
             get
             {
@@ -21,14 +22,25 @@ namespace Factories
 
         }
 
-        public static IUserDatabaseHandler userDatabaseHandler
+        public static IUserHandler UserDatabaseHandler
         {
             get
-            {            
+            {
                 {
                     _userHandler = new UserDatabaseHandler(new DBConnectionHandler());
                 }
                 return _userHandler;
+            }
+        }
+
+        public static IReservationHandler ReservationHandler
+        {
+            get
+            {
+                {
+                    _reservationHandler = new ReservationDatabaseHandler(new DBConnectionHandler());
+                }
+                return _reservationHandler;
             }
         }
     }

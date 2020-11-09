@@ -9,7 +9,7 @@ using System.Data;
 
 namespace DAL.Handler
 {
-    public class UserDatabaseHandler : IUserDatabaseHandler
+    public class UserDatabaseHandler : IUserHandler
     {
         private static readonly string connectionString = "";
         private readonly IDBConnectionHandler _dbCon;

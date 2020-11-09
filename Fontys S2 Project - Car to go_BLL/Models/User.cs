@@ -25,20 +25,20 @@ namespace BLL.Models
         public void Create(User user)
         {
             var result = UserModelConverter.ConvertModelToDto(user);
-            DalFactory.userDatabaseHandler.Create(result);
+            DalFactory.UserDatabaseHandler.Create(result);
         }
 
         public string ValidateLogin(User user)
         {
             var result = UserModelConverter.ConvertModelToDto(user);
-            string userresult = DalFactory.userDatabaseHandler.Login(result);
+            string userresult = DalFactory.UserDatabaseHandler.Login(result);
             return userresult;
             
         }
 
         public List<User> GetUsers()
         {
-            var result = DalFactory.userDatabaseHandler.GetAll();
+            var result = DalFactory.UserDatabaseHandler.GetAll();
             users = new List<User>();
 
             foreach (var dto in result)

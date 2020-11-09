@@ -72,22 +72,22 @@
                         @Html.DisplayFor(modelItem => item.Transmission)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Enginepower)
+                        @Html.DisplayFor(modelItem => item.Enginepower)HP
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Acceleration)
+                        @Html.DisplayFor(modelItem => item.Acceleration) Seconds to 100km/h
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Weight)
+                        @Html.DisplayFor(modelItem => item.Weight) kg
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Cargospace)
+                        @Html.DisplayFor(modelItem => item.Cargospace) L
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Seat)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.RentalPrice)
+                        €@Html.DisplayFor(modelItem => item.RentalPrice)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Fueltype)
@@ -100,7 +100,7 @@
                     </td>
                     <td>
                         @Html.ActionLink("Update", "Update", new { ID = item.ID })
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })
+                        @Html.ActionLink("Details", "Details","Vehicle", new { ID = item.ID })
                         @Html.ActionLink("Delete", "Delete", new { ID = item.ID }, new { onclick = "return confirm('Are sure wants to delete?');" })
                     </td>
                 </tr>

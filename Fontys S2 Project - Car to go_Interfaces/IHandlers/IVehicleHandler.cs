@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Interfaces.IHandlers
 {
-    public interface IVehicleDatabaseHandler : IHandlerGeneric<VehicleDTO>
+    public interface IVehicleHandler : IHandlerGeneric<VehicleDTO>
     { 
        
     }

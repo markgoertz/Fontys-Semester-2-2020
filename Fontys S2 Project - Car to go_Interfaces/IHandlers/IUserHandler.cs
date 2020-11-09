@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Interfaces.IHandlers
 {
-    public interface IUserDatabaseHandler : IHandlerGeneric<UserDTO>
+    public interface IUserHandler : IHandlerGeneric<UserDTO>
     {
         string Login(UserDTO user);
     }

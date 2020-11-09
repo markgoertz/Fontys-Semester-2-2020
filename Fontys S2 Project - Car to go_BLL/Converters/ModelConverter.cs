@@ -15,21 +15,7 @@ namespace BLL.Converters
         {
             _model = new Vehicle()
             {
-                ID = dto.ID,
-                Seat = dto.Seat,
-                Brandname = dto.Brandname,
-                CategoryID = dto.CategoryID,
-                Cargospace = dto.Cargospace,
-                Acceleration = dto.Acceleration,
-                Enginepower = dto.Enginepower,
-                Fueltype = dto.Fueltype,
-                ImageLink = dto.ImageLink,
-                Modelname = dto.Modelname,
-                RentalPrice = dto.RentalPrice,
-                Transmission = dto.Transmission,
-                Weight  = dto.Weight,
-
-                
+                ID = dto.ID, Seat = dto.Seat, Brandname = dto.Brandname, CategoryID = dto.CategoryID, Cargospace = dto.Cargospace, Acceleration = dto.Acceleration, Enginepower = dto.Enginepower, Fueltype = dto.Fueltype, ImageLink = dto.ImageLink, Modelname = dto.Modelname,  RentalPrice = dto.RentalPrice, Transmission = dto.Transmission, Weight  = dto.Weight,
             };
 
             return _model;
@@ -39,19 +25,7 @@ namespace BLL.Converters
         {
             _dto = new VehicleDTO() 
             { 
-              ID = model.ID, 
-              Brandname= model.Brandname, 
-              Modelname= model.Modelname, 
-              CategoryID= model.CategoryID, 
-              Seat= model.Seat, 
-              Cargospace= model.Cargospace, 
-              Enginepower= model.Enginepower,
-              Acceleration = model.Acceleration,
-              Fueltype = model.Fueltype,
-              ImageLink = model.ImageLink,
-              RentalPrice = model.RentalPrice,
-              Transmission = model.Transmission,
-              Weight = model.Weight
+              ID = model.ID, Brandname= model.Brandname, Modelname= model.Modelname, CategoryID= model.CategoryID, Seat= model.Seat, Cargospace= model.Cargospace, Enginepower= model.Enginepower, Acceleration = model.Acceleration, Fueltype = model.Fueltype, ImageLink = model.ImageLink, RentalPrice = model.RentalPrice, Transmission = model.Transmission, Weight = model.Weight
             };
 
             return _dto;
