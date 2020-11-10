@@ -61,7 +61,6 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         {
             var VVM = new VehicleViewModel();
             return View(VVM);
-          
         }
      
         [HttpPost]
@@ -78,13 +77,13 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public ActionResult Update(int ID)
         {
             var all = vehicleGetall.GetAllCars();
-            VVM = new List<VehicleViewModel>();
+            var items = new VehicleViewModel();
             foreach (var car in all)
             {
                 if (ID == car.ID)
                 {
-                   VVM.Add(new VehicleViewModel
-                    {
+                   items = new VehicleViewModel()
+                   { 
                         ID = car.ID,
                         Seat = car.Seat,
                         Enginepower = car.Enginepower,
@@ -98,17 +97,17 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                         Fueltype = car.Fueltype,
                         ImageLink = car.ImageLink,
                         CategoryID = car.CategoryID
-                   });
+                   };
                     
                 }
             }
-            return View(VVM);
+            return View(items);
         }
 
         [HttpPost]
-        public ActionResult Update(VehicleViewModel vehicleViewModel)
+        public ActionResult Update(Vehicle model)
         {
-           
+            vehicleGetall.Edit(model);
             return RedirectToAction("Index");
         }
 

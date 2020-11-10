@@ -32,5 +32,11 @@ namespace BLL
 
             return vehicles;
         }
+        public void Edit(Vehicle Edit)
+        {
+            var DTO = ModelConverter.ConvertModelToDto(Edit);
+            DalFactory.VehicleHandler.Update(DTO);
+
+        }
     }
 }

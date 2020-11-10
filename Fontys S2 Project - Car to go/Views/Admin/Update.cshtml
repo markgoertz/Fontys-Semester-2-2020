@@ -1,77 +1,73 @@
-﻿@model List<Fontys_S2_Project___Car_to_go.Models.VehicleViewModel>
+﻿@model Fontys_S2_Project___Car_to_go.Models.VehicleViewModel
 
-
-
-@foreach (var item in Model)
-{
 <div class="row">
     <div class="col-md-4">
         <form asp-action="View">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="@item.ID" class="control-label"></label>
-                <input asp-for="@item.ID" class="form-control" />
-                <span asp-validation-for="@item.ID" class="text-danger"></span>
+                <label asp-for="@Model.ID" class="control-label"></label>
+                <input asp-for="@Model.ID" class="form-control" />
+                <span asp-validation-for="@Model.ID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Brandname" class="control-label"></label>
-                <input asp-for="@item.Brandname" class="form-control" />
-                <span asp-validation-for="@item.Brandname" class="text-danger"></span>
+                <label asp-for="@Model.Brandname" class="control-label"></label>
+                <input asp-for="@Model.Brandname" class="form-control" />
+                <span asp-validation-for="@Model.Brandname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Modelname" class="control-label"></label>
-                <input asp-for="@item.Modelname" class="form-control" />
-                <span asp-validation-for="@item.Modelname" class="text-danger"></span>
+                <label asp-for="@Model.Modelname" class="control-label"></label>
+                <input asp-for="@Model.Modelname" class="form-control" />
+                <span asp-validation-for="@Model.Modelname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Transmission" class="control-label"></label>
-                <input asp-for="@item.Transmission" class="form-control" />
-                <span asp-validation-for="@item.Transmission" class="text-danger"></span>
+                <label asp-for="@Model.Transmission" class="control-label"></label>
+                <input asp-for="@Model.Transmission" class="form-control" />
+                <span asp-validation-for="@Model.Transmission" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Enginepower" class="control-label"></label>
-                <input asp-for="@item.Enginepower" class="form-control" />
-                <span asp-validation-for="@item.Enginepower" class="text-danger"></span>
+                <label asp-for="@Model.Enginepower" class="control-label"></label>
+                <input asp-for="@Model.Enginepower" class="form-control" />
+                <span asp-validation-for="@Model.Enginepower" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Acceleration" class="control-label"></label>
-                <input asp-for="@item.Acceleration" class="form-control" />
-                <span asp-validation-for="@item.Acceleration" class="text-danger"></span>
+                <label asp-for="@Model.Acceleration" class="control-label"></label>
+                <input asp-for="@Model.Acceleration" class="form-control" />
+                <span asp-validation-for="@Model.Acceleration" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Weight" class="control-label"></label>
-                <input asp-for="@item.Weight" class="form-control" />
-                <span asp-validation-for="@item.Weight" class="text-danger"></span>
+                <label asp-for="@Model.Weight" class="control-label"></label>
+                <input asp-for="@Model.Weight" class="form-control" />
+                <span asp-validation-for="@Model.Weight" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Cargospace" class="control-label"></label>
-                <input asp-for="@item.Cargospace" class="form-control" />
-                <span asp-validation-for="@item.Cargospace" class="text-danger"></span>
+                <label asp-for="@Model.Cargospace" class="control-label"></label>
+                <input asp-for="@Model.Cargospace" class="form-control" />
+                <span asp-validation-for="@Model.Cargospace" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Seat" class="control-label"></label>
-                <input asp-for="@item.Seat" class="form-control" />
-                <span asp-validation-for="@item.Seat" class="text-danger"></span>
+                <label asp-for="@Model.Seat" class="control-label"></label>
+                <input asp-for="@Model.Seat" class="form-control" />
+                <span asp-validation-for="@Model.Seat" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.RentalPrice" class="control-label"></label>
-                <input asp-for="@item.RentalPrice" class="form-control" />
-                <span asp-validation-for="@item.RentalPrice" class="text-danger"></span>
+                <label asp-for="@Model.RentalPrice" class="control-label"></label>
+                <input asp-for="@Model.RentalPrice" class="form-control" />
+                <span asp-validation-for="@Model.RentalPrice" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.Fueltype" class="control-label"></label>
-                <input asp-for="@item.Fueltype" class="form-control" />
-                <span asp-validation-for="@item.Fueltype" class="text-danger"></span>
+                <label asp-for="@Model.Fueltype" class="control-label"></label>
+                <input asp-for="@Model.Fueltype" class="form-control" />
+                <span asp-validation-for="@Model.Fueltype" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.ImageLink" class="control-label"></label>
-                <input asp-for="@item.ImageLink" class="form-control" />
-                <span asp-validation-for="@item.ImageLink" class="text-danger"></span>
+                <label asp-for="@Model.ImageLink" class="control-label"></label>
+                <input asp-for="@Model.ImageLink" class="form-control" />
+                <span asp-validation-for="@Model.ImageLink" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@item.CategoryID" class="control-label"></label>
-                <input asp-for="@item.CategoryID" class="form-control" />
-                <span asp-validation-for="@item.CategoryID" class="text-danger"></span>
+                <label asp-for="@Model.CategoryID" class="control-label"></label>
+                <input asp-for="@Model.CategoryID" class="form-control" />
+                <span asp-validation-for="@Model.CategoryID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <button class="btn btn-sm btn-warning btn-outline-dark input text-center" type="submit" asp-controller="Admin" asp-action="Update">Update Car!</button>
@@ -79,7 +75,7 @@
         </form>
     </div>
 </div>
-}
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

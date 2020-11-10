@@ -1,5 +1,5 @@
 ﻿<ul class="navbar-nav">
-    @if (User.Identity.IsAuthenticated)
+    @if (User.IsInRole("User"))
     {
 
 
@@ -12,16 +12,27 @@
 
     }
 
-    
     else
     {
 
-    <li class="nav-item">
-        <a class="nav-link " asp-controller="User" asp-action="CreateAccount">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="User" asp-action="UserLogin">Sign in!</a>
-    </li>
+        if (User.IsInRole("Admin"))
+        {
+            <li class="nav-item">
+                <a class="nav-link " asp-controller="Admin" asp-action="Index">Admin Panel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="User" asp-action="Logout">Log out!</a>
+            </li>
+        }
+        else
+        {
+        <li class="nav-item">
+            <a class="nav-link " asp-controller="User" asp-action="CreateAccount">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="User" asp-action="UserLogin">Sign in!</a>
+        </li>
+           }
+        }
 
-    }
 </ul>

@@ -26,12 +26,5 @@ namespace BLL.Models
         {
             DalFactory.VehicleHandler.Delete(ID);
         }
-
-        public void Edit(Vehicle Edit)
-        {
-            var DTO = ModelConverter.ConvertModelToDto(Edit);
-            DalFactory.VehicleHandler.Update(DTO);
-
-        }
     }
 }

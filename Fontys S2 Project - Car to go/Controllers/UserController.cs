@@ -111,9 +111,17 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult CreateAccount(User user)
         {
-            _user.Create(user);
+            var check = _user.CheckDoubleEmails(user);
+            if (check == true)
+            {
+                 TempData["DoubleEmails"] = "The specified email is already known in our system.";
+                 return View();
+            }
+            else
+            {
+                _user.Create(user);
+            }
             return RedirectToAction("Index");
-
         }
         [HttpGet]
         public async Task<IActionResult> Logout()

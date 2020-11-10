@@ -9,7 +9,7 @@ namespace BLL.Models
 {
     public class User
     { 
-        private UserDTO _user;
+        private readonly UserDTO _user;
         private List<User> users;
 
         public int ID { get; set; }
@@ -27,13 +27,29 @@ namespace BLL.Models
             var result = UserModelConverter.ConvertModelToDto(user);
             DalFactory.UserDatabaseHandler.Create(result);
         }
-
+      
         public string ValidateLogin(User user)
         {
             var result = UserModelConverter.ConvertModelToDto(user);
             string userresult = DalFactory.UserDatabaseHandler.Login(result);
             return userresult;
             
+        }
+
+        public bool CheckDoubleEmails(User user)
+        {
+            var boolean = false;
+            var emailtest = DalFactory.UserDatabaseHandler.GetAll();
+            foreach (var account in emailtest)
+            {
+                if (account.Email == user.Email)
+                {
+                    boolean = true;
+                    return boolean;
+                }
+
+            }
+            return boolean;
         }
 
         public List<User> GetUsers()
