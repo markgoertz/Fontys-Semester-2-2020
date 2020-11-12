@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BLL;
 using BLL.Models;
 using Fontys_S2_Project___Car_to_go.Models;
+using Logic_interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,22 +14,21 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-        private readonly VehicleCollection _coll;
-        private readonly Vehicle vehicle;
-        private readonly VehicleGetall vehicleGetall;
+        private readonly IVehicleCollection _coll;
+        private readonly IVehicle vehicle;  
         private List<VehicleViewModel> VVM;
+
         public AdminController()
         {
             _coll = new VehicleCollection();
             vehicle = new Vehicle();
-            vehicleGetall = new VehicleGetall();
         }
 
 /* INDEX ------------------------------------------- INDEX ------------------------------------------------------ INDEX --------------------------------------------------- INDEX ------------------------------------ INDEX*/
 
         public IActionResult Index()
         {
-            var all = vehicleGetall.GetAllCars();
+            var all = _coll.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var car in all)
@@ -67,6 +67,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public ActionResult Create(Vehicle car)
         {
             _coll.Create(car);
+            TempData["Create"] = "The records has been added to the system!";
             return RedirectToAction("Index");
 
         }
@@ -76,7 +77,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpGet]
         public ActionResult Update(int ID)
         {
-            var all = vehicleGetall.GetAllCars();
+            var all = _coll.GetAllCars();
             var items = new VehicleViewModel();
             foreach (var car in all)
             {
@@ -107,7 +108,8 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult Update(Vehicle model)
         {
-            vehicleGetall.Edit(model);
+            vehicle.Edit(model);
+            TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index");
         }
 
@@ -117,6 +119,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public IActionResult Delete(int ID)
         {           
             vehicle.Delete(ID);
+            TempData["Delete"] = "The records has been deleted from the system!";
             return RedirectToAction("Index");
         }
     }

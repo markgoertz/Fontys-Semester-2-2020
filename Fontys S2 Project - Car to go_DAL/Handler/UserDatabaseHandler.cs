@@ -77,9 +77,11 @@ namespace DAL.Handler
         {
             using (_dbCon.Open())
             {
-                
-                using SqlCommand command = new SqlCommand("spValidateUserLogin", _dbCon.Connection);
-                command.CommandType = CommandType.StoredProcedure;
+
+                using SqlCommand command = new SqlCommand("spValidateUserLogin", _dbCon.Connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
 
                 command.Parameters.AddWithValue("@LoginEmail", user.Email);
                 command.Parameters.AddWithValue("@LoginPassword", user.Password);
@@ -90,63 +92,26 @@ namespace DAL.Handler
             }
         }
 
-/* GetbyEmail ------------------------------------------- GetbyEmail ------------------------------------------------------ GetbyEmail --------------------------------------------------- GetbyEmail ------------------------------------ GetbyEmail*/
-
-        //public List<UserDTO> GetByEmail(string email)
-        //{
-        //    var users = new List<UserDTO>();
-        //    using (_dbCon.Open())
-        //    {
-        //        string query = "SELECT * FROM User WHERE email = @Email";
-        //        using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
-        //        var reader = command.ExecuteReader();
-        //        while (reader.Read())
-        //        {
-        //            UserDTO UserDTO = new UserDTO
-        //            {
-        //                ID = reader.GetInt32(0),
-        //                Firstname = reader.GetString(1),
-        //                Lastname = reader.GetString(2),
-        //                Postalcode = reader.GetString(3),
-        //                Adres = reader.GetString(4),
-        //                Housenumber = reader.GetInt32(5),
-        //                Email = reader.GetString(6),
-        //                Role = reader.GetString(7),
-        //                Password = reader.GetString(8)
-        //            };
-
-        //            users.Add(UserDTO);
-        //        }
-        //    }
-        //    return users;
-        //}
-
-
- /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
+/* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
 
 
         public void Update(UserDTO U1)
         {
             using (_dbCon.Open())
             {
-                //string query = "UPDATE Vehicle Set Brandname = @Brandname, Modelname = @Modelname, Transmission = @Transmission, Enginepower = @Enginepower, Weight = @Weight, Acceleration = @Acceleration, Cargospace = @Cargospace, Seat = @Seat, Rentalprice = @Rentalprice, Fueltype = @Fueltype, ImageLink = @ImageLink WHERE ID = @ID;";
-                //using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
+                string query = "UPDATE [Dbo].[User] Set Firstname = @Firstname, Lastname = @Lastname, PostalCode = @Postalcode, Adres = @Adres, Housenumber = @Housenumber, Email = @Email, Role = @Role WHERE ID = @ID;";
+                using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
 
-                //command.Parameters.AddWithValue("@ID", U1.ID);
-                //command.Parameters.AddWithValue("@Brandname", U1.Brandname);
-                //command.Parameters.AddWithValue("@Modelname", U1.Modelname);
-                //command.Parameters.AddWithValue("@Transmission", U1.Transmission);
-                //command.Parameters.AddWithValue("@Enginepower", U1.Enginepower);
-                //command.Parameters.AddWithValue("@Weight", U1.Weight);
-                //command.Parameters.AddWithValue("@Acceleration", U1.Acceleration);
-                //command.Parameters.AddWithValue("@Cargospace", U1.Cargospace);
-                //command.Parameters.AddWithValue("@Seat", U1.Seat);
-                //command.Parameters.AddWithValue("@Rentalprice", U1.RentalPrice);
-                //command.Parameters.AddWithValue("@Fueltype", U1.Fueltype);
-                //command.Parameters.AddWithValue("@ImageLink", U1.ImageLink);
-                //command.Parameters.AddWithValue("@CategoryID", U1.CategoryID);
-
-                //command.ExecuteNonQuery();
+                command.Parameters.AddWithValue("@ID", U1.ID);
+                command.Parameters.AddWithValue("@Firstname", U1.Firstname);
+                command.Parameters.AddWithValue("@Lastname", U1.Lastname);
+                command.Parameters.AddWithValue("@Postalcode", U1.Postalcode);
+                command.Parameters.AddWithValue("@Adres", U1.Adres);
+                command.Parameters.AddWithValue("@Housenumber", U1.Housenumber);
+                command.Parameters.AddWithValue("@Email", U1.Email);
+                command.Parameters.AddWithValue("@Role", U1.Role);
+               
+                command.ExecuteNonQuery();
             }
         }
 

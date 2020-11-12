@@ -1,15 +1,15 @@
 ﻿using BLL.Converters;
 using DTO_layer.Entities_DTO;
 using Factories;
+using Logic_interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BLL.Models
 {
-    public class User
+    public class User 
     { 
-        private readonly UserDTO _user;
         private List<User> users;
 
         public int ID { get; set; }
@@ -22,47 +22,6 @@ namespace BLL.Models
         public string Role { get; set; }
         public string Password { get; set; }
 
-        public void Create(User user)
-        {
-            var result = UserModelConverter.ConvertModelToDto(user);
-            DalFactory.UserDatabaseHandler.Create(result);
-        }
-      
-        public string ValidateLogin(User user)
-        {
-            var result = UserModelConverter.ConvertModelToDto(user);
-            string userresult = DalFactory.UserDatabaseHandler.Login(result);
-            return userresult;
-            
-        }
-
-        public bool CheckDoubleEmails(User user)
-        {
-            var boolean = false;
-            var emailtest = DalFactory.UserDatabaseHandler.GetAll();
-            foreach (var account in emailtest)
-            {
-                if (account.Email == user.Email)
-                {
-                    boolean = true;
-                    return boolean;
-                }
-
-            }
-            return boolean;
-        }
-
-        public List<User> GetUsers()
-        {
-            var result = DalFactory.UserDatabaseHandler.GetAll();
-            users = new List<User>();
-
-            foreach (var dto in result)
-            {
-                var model = UserModelConverter.ConvertDtoToModel(dto);
-                users.Add(model);
-            }
-            return users;
-        }
+     
     }
 }

@@ -4,8 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using BLL.Collections;
 using BLL.Models;
 using Fontys_S2_Project___Car_to_go.Models;
+using Logic_interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +18,11 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
     public class UserController : Controller
     {
         
-        private readonly User _user;
+        private readonly UserCollection _user;
         private List<UserViewModel> UVM;
         public UserController()
         {
-            _user = new User();
+            _user = new UserCollection();
         }
         public IActionResult Index()
         {

@@ -90,7 +90,7 @@ namespace DAL.Handler
         {
             using (_dbCon.Open())
             {
-                string query = "UPDATE [Dbo].[Vehicle] Set Brandname = @Brandname, Modelname = @Modelname, Transmission = @Transmission, Enginepower = @Enginepower, Weight = @Weight, Acceleration = @Acceleration, Cargospace = @Cargospace, Seat = @Seat, Rentalprice = @Rentalprice, Fueltype = @Fueltype, ImageLink = @ImageLink WHERE ID = @ID;";
+                string query = "UPDATE [Dbo].[Vehicle] Set Brandname = @Brandname, Modelname = @Modelname, Transmission = @Transmission, Enginepower = @Enginepower, Weight = @Weight, Acceleration = @Acceleration, Cargospace = @Cargospace, Seat = @Seat, Rentalprice = @Rentalprice, Fueltype = @Fueltype, ImageLink = @ImageLink, CategoryID = @CategoryID WHERE ID = @ID;";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
 
                 command.Parameters.AddWithValue("@ID", U1.ID);

@@ -140,3 +140,4 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Fontys S2 Project - Car to go.MvcApplicationPartsAssemblyInfo.cache
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\PlaceReservation.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\Succes.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\SpecialVehicleIndex.cshtml.g.cs

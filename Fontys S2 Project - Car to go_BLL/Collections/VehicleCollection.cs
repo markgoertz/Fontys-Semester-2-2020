@@ -1,24 +1,22 @@
 ﻿using BLL.Converters;
 using BLL.Models;
 using Factories;
+using Logic_interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BLL
 {
-    public class VehicleCollection
+    public class VehicleCollection : IVehicleCollection
     {
+        private List<Vehicle> vehicles;
         public void Create(Vehicle car)
         {
             var result = ModelConverter.ConvertModelToDto(car);
             DalFactory.VehicleHandler.Create(result);
         }
-    }
-
-    public class VehicleGetall
-    {
-        private List<Vehicle> vehicles;
+    
         public List<Vehicle> GetAllCars()
         {
             var result = DalFactory.VehicleHandler.GetAll();
@@ -31,12 +29,6 @@ namespace BLL
             }
 
             return vehicles;
-        }
-        public void Edit(Vehicle Edit)
-        {
-            var DTO = ModelConverter.ConvertModelToDto(Edit);
-            DalFactory.VehicleHandler.Update(DTO);
-
         }
     }
 }

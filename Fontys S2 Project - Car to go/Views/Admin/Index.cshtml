@@ -3,11 +3,27 @@
 @{
     ViewData["Title"] = "View";
 }
+
 <h2 class="text-center p-3">All Cars in the system!</h2>
 
-@Html.ActionLink("Add new car to the system", "Create", "Admin")
+
+   @Html.ActionLink("Add new car to the system", "Create", "Admin")
+
 <div class="table-responsive">
-    <table class="table table-striped ">
+    @if (TempData["Delete"] != null)
+    {
+        <strong class="alert alert-danger">@TempData["Delete"]</strong>
+    }
+    @if (TempData["Create"] != null)
+    {
+        <strong class="alert alert-success">@TempData["Create"]</strong>
+    }
+    @if (TempData["Update"] != null)
+    {
+        <strong class="alert alert-warning">@TempData["Update"]</strong>
+    }
+
+    <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
                 <th>
@@ -100,7 +116,7 @@
                     </td>
                     <td>
                         @Html.ActionLink("Update", "Update", new { ID = item.ID })
-                        @Html.ActionLink("Details", "Details","Vehicle", new { ID = item.ID })
+                        @Html.ActionLink("Details", "Details", "Vehicle", new { ID = item.ID })
                         @Html.ActionLink("Delete", "Delete", new { ID = item.ID }, new { onclick = "return confirm('Are sure wants to delete?');" })
                     </td>
                 </tr>

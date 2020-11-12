@@ -4,24 +4,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLL;
 using Fontys_S2_Project___Car_to_go.Models;
+using Logic_interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Car_to_go.Controllers
 {
     public class VehicleController : Controller
     {
-        private readonly VehicleCollection _coll;
-        private readonly VehicleGetall vehicleGetall;
+        private readonly IVehicleCollection _coll;
         private List<VehicleViewModel> VVM;
 
         public VehicleController()
         {
             _coll = new VehicleCollection();
-            vehicleGetall = new VehicleGetall();
         }
         public IActionResult CarIndex()
         {
-            var all = vehicleGetall.GetAllCars();
+            var all = _coll.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var vehicle in all)
@@ -55,7 +54,7 @@ namespace Car_to_go.Controllers
 
         public IActionResult VanIndex()
         {
-            var all = vehicleGetall.GetAllCars();
+            var all = _coll.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var car in all)
@@ -87,14 +86,14 @@ namespace Car_to_go.Controllers
             return View(VVM);
         }
 
-        public IActionResult SpecialIndex()
+        public IActionResult SpecialVehicleIndex()
         {
-            var all = vehicleGetall.GetAllCars();
+            var all = _coll.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             foreach (var car in all)
             {
-                if (car.CategoryID == 1)
+                if (car.CategoryID == 3)
                 {
 
                     VVM.Add(new VehicleViewModel
@@ -124,7 +123,7 @@ namespace Car_to_go.Controllers
 
         public ActionResult Details(int? ID)
         {
-            var all = vehicleGetall.GetAllCars();
+            var all = _coll.GetAllCars();
             VVM = new List<VehicleViewModel>();
 
             //If the ID isn't equil to Null-value, the if-statement is executed.

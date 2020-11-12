@@ -1,12 +1,13 @@
 ﻿using BLL.Converters;
 using Factories;
+using Logic_interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BLL.Models
 {
-    public class Vehicle
+    public class Vehicle : IVehicle
     {
         public int ID { get; set; }
         public string Brandname { get; set; }
@@ -25,6 +26,13 @@ namespace BLL.Models
         public void Delete(int ID)
         {
             DalFactory.VehicleHandler.Delete(ID);
+        }
+
+        public void Edit(Vehicle Edit)
+        {
+            var DTO = ModelConverter.ConvertModelToDto(Edit);
+            DalFactory.VehicleHandler.Update(DTO);
+
         }
     }
 }

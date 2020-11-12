@@ -6,7 +6,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="@Model.ID" class="control-label"></label>
-                <input asp-for="@Model.ID" class="form-control" />
+                <input asp-for="@Model.ID" class="form-control disabled" />
                 <span asp-validation-for="@Model.ID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -56,18 +56,31 @@
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Fueltype" class="control-label"></label>
-                <input asp-for="@Model.Fueltype" class="form-control" />
+                <select asp-for="@Model.Fueltype" class="form-control" id="Fueltype">
+                    <option></option>
+                    <option value="E5">E5</option>
+                    <option value="E10">E10</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Other">Other</option>
+                </select>
                 <span asp-validation-for="@Model.Fueltype" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="@Model.ImageLink" class="control-label"></label>
                 <input asp-for="@Model.ImageLink" class="form-control" />
                 <span asp-validation-for="@Model.ImageLink" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="@Model.CategoryID" class="control-label"></label>
-                <input asp-for="@Model.CategoryID" class="form-control" />
-                <span asp-validation-for="@Model.CategoryID" class="text-danger"></span>
+                <select asp-for="@Model.CategoryID" class="form-control">
+                    <option></option>
+                    <option value="1">Car</option>
+                    <option value="2">Van</option>
+                    <option value="3">Special Vehicle</option>
+                </select>
+                <span asp-validation-for="CategoryID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <button class="btn btn-sm btn-warning btn-outline-dark input text-center" type="submit" asp-controller="Admin" asp-action="Update">Update Car!</button>
