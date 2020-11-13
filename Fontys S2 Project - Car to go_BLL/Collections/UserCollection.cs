@@ -37,7 +37,6 @@ namespace BLL.Collections
                     status = true;
                     return status;
                 }
-
             }
             return status;
         }
