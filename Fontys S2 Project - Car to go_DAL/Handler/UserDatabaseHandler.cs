@@ -121,7 +121,7 @@ namespace DAL.Handler
         {
             using (_dbCon.Open())
             {
-                string query = "DELETE FROM User WHERE ID=@ID";
+                string query = "DELETE FROM [Dbo].[User] WHERE ID=@ID";
                 using SqlCommand command = new SqlCommand(query, _dbCon.Connection);
 
                 command.Parameters.AddWithValue("@ID", ID);

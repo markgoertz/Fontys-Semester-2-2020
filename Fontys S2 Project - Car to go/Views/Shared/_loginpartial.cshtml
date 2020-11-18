@@ -4,7 +4,7 @@
 
 
         <li class="nav-item">
-            <a class="nav-link " asp-controller="User" asp-action="#">Change profile</a>
+            <a class="nav-link " asp-controller="User" asp-action="Update">Change personal info</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" asp-controller="User" asp-action="Logout">Log out!</a>
@@ -21,9 +21,9 @@
                 <li class="nav-item dropdown show">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">Admin panel</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Index">Manage Vehicles</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="AdminVehicles" asp-action="Index">Manage Vehicles</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="#">Manage Users</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="AdminUsers" asp-action="Index">Manage Users</a>
                     </div>
                 </li>
                 <li class="nav-item">

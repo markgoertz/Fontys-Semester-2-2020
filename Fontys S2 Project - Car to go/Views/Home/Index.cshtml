@@ -1,7 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@if (TempData["Update"] != null)
+{
+    <strong class="alert alert-warning">@TempData["Update"]</strong>
+    <br/>
+    <br/>
+}
+@if (TempData["Delete"] != null)
+{
+    <strong class="alert alert-danger">@TempData["Delete"]</strong>
+    <br />
+    <br />
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Search, Rent and got a Car to Go!</p>

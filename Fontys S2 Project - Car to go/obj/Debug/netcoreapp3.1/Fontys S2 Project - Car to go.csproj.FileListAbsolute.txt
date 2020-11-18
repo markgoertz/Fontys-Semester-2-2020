@@ -123,9 +123,6 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
-D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Update.cshtml.g.cs
-D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\CreateAccount.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_loginpartial.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
@@ -141,3 +138,10 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\PlaceReservation.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\Succes.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\SpecialVehicleIndex.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\AdminUsers\Index.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\AdminVehicles\Create.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\AdminVehicles\Index.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\AdminVehicles\Update.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\AdminUsers\Create.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\AdminUsers\Update.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\User\Update.cshtml.g.cs

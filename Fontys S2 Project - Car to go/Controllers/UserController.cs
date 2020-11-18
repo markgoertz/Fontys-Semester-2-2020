@@ -19,10 +19,12 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
     {
         
         private readonly UserCollection _user;
+        private readonly User userlogic;
         private List<UserViewModel> UVM;
         public UserController()
         {
             _user = new UserCollection();
+            userlogic = new User();
         }
         public IActionResult Index()
         {
@@ -49,7 +51,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
             if (ModelState.IsValid)
             {
-                string LoginStatus = _user.ValidateLogin(user);
+                string LoginStatus = userlogic.ValidateLogin(user);
 
                 if (LoginStatus == "Success")
                 {
@@ -113,7 +115,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult CreateAccount(User user)
         {
-            var check = _user.CheckDoubleEmails(user);
+            var check = userlogic.CheckDoubleEmails(user);
             if (check == true)
             {
                  TempData["DoubleEmails"] = "The specified email is already known in our system.";
@@ -137,6 +139,49 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Update()
+        {
+            var all = _user.GetUsers();
+            var items = new UserViewModel();
+            foreach (var user in all)
+            {
+                if (User.HasClaim(ClaimTypes.Email,user.Email))
+                {
+                    items = new UserViewModel()
+                    {
+                        ID = user.ID,
+                        Firstname = user.Firstname,
+                        Lastname = user.Lastname,
+                        Adres = user.Adres,
+                        Email = user.Email,
+                        Housenumber = user.Housenumber,
+                        Password = user.Password,
+                        Postalcode = user.Postalcode,
+                        Role = user.Role
+                      
+                    };
+
+                }
+            }
+            return View(items);
+        }
+
+        [HttpPost]
+        public ActionResult Update(User model)
+        {
+            userlogic.Edit(model);
+            TempData["Update"] = "The records has been changed from the system!";
+            return RedirectToAction("Index","Home");
+        }
+        public IActionResult Delete(int ID)
+        {
+            userlogic.Delete(ID);
+            TempData["Delete"] = "The records are deleted from the system!";
+            return RedirectToAction("Logout","User");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

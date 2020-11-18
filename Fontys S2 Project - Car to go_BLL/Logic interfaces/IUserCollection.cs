@@ -7,7 +7,6 @@ namespace Logic_interfaces
 {
     public interface IUserCollection
     {
-        void Create(User user);
         List<User> GetUsers();
 
     }

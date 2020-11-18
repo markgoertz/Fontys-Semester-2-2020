@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Fontys_S2_Project___Car_to_go.Models.UserViewModel>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2 class="text-center p-3">All Cars in the system!</h2>
+
+
+   @Html.ActionLink("Add new User to the system", "Create", "AdminUsers")
+
+<div class="table">
+    @if (TempData["Delete"] != null)
+    {
+        <strong class="alert alert-danger">@TempData["Delete"]</strong>
+    }
+    @if (TempData["Create"] != null)
+    {
+        <strong class="alert alert-success">@TempData["Create"]</strong>
+    }
+    @if (TempData["Update"] != null)
+    {
+        <strong class="alert alert-warning">@TempData["Update"]</strong>
+    }
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lastname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Postalcode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Housenumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                   
+                </th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Firstname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Postalcode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Housenumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Update", "Update", new { ID = item.ID })
+                        @Html.ActionLink("Delete", "Delete", new { ID = item.ID }, new { onclick = "return confirm('Are sure wants to delete?');" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

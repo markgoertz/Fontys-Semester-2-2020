@@ -12,35 +12,6 @@ namespace BLL.Collections
     {
         private List<User> user;
 
-        public void Create(User user)
-        {
-            var result = UserModelConverter.ConvertModelToDto(user);
-            DalFactory.UserDatabaseHandler.Create(result);
-        }
-
-        public string ValidateLogin(User user)
-        {
-            var result = UserModelConverter.ConvertModelToDto(user);
-            string userresult = DalFactory.UserDatabaseHandler.Login(result);
-            return userresult;
-
-        }
-
-        public bool CheckDoubleEmails(User user)
-        {
-            var status = false;
-            var emailtest = DalFactory.UserDatabaseHandler.GetAll();
-            foreach (var account in emailtest)
-            {
-                if (account.Email == user.Email)
-                {
-                    status = true;
-                    return status;
-                }
-            }
-            return status;
-        }
-
         public List<User> GetUsers()
         {
             var result = DalFactory.UserDatabaseHandler.GetAll();
@@ -52,6 +23,12 @@ namespace BLL.Collections
                 user.Add(model);
             }
             return user;
+        }
+
+        public void Create(User user)
+        {
+            var result = UserModelConverter.ConvertModelToDto(user);
+            DalFactory.UserDatabaseHandler.Create(result);
         }
     }
 }

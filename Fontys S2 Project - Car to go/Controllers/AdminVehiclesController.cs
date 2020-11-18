@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLL;
 using BLL.Models;
+using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Logic_interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -12,13 +13,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace Fontys_S2_Project___Car_to_go.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class AdminController : Controller
+    public class AdminVehiclesController : Controller
     {
         private readonly IVehicleCollection _coll;
-        private readonly IVehicle vehicle;  
-        private List<VehicleViewModel> VVM;
+        private readonly IVehicle vehicle;
+        List<VehicleViewModel> vehicleViews = new List<VehicleViewModel>();
 
-        public AdminController()
+        public AdminVehiclesController()
         {
             _coll = new VehicleCollection();
             vehicle = new Vehicle();
@@ -29,29 +30,14 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public IActionResult Index()
         {
             var all = _coll.GetAllCars();
-            VVM = new List<VehicleViewModel>();
+            vehicleViews = new List<VehicleViewModel>();
 
-            foreach (var car in all)
+            foreach (var vehicle in all)
             {
-                VVM.Add(new VehicleViewModel
-                {
-                    ID = car.ID,
-                    Seat = car.Seat,
-                    Enginepower = car.Enginepower,
-                    Acceleration = car.Acceleration,
-                    Brandname = car.Brandname,
-                    Cargospace = car.Cargospace,
-                    Modelname = car.Modelname,
-                    RentalPrice = car.RentalPrice,
-                    Transmission = car.Transmission,
-                    Weight = car.Weight,
-                    Fueltype = car.Fueltype,
-                    ImageLink = car.ImageLink,
-                    CategoryID = car.CategoryID
-
-                });
+                var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(vehicle);
+                vehicleViews.Add(viewmodel);
             }
-            return View(VVM);
+            return View(vehicleViews);
         }
 
 /* CREATE ------------------------------------------- CREATE ------------------------------------------------------ CREATE --------------------------------------------------- CREATE ------------------------------------ CREATE*/
