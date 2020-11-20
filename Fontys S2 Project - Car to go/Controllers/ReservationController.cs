@@ -40,9 +40,28 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult PlaceReservation(Reservation reservation)
         {
-            _reservationlogic.PlaceReservation(reservation);
-            return RedirectToAction("Succes", "Reservation");
+            var checkstartdate = _reservationlogic.CorrectStartDate(reservation);
+            var checkenddate = _reservationlogic.IsEndDateGreaterThenStartDate(reservation);
+            if (checkstartdate && checkenddate == true)
+            {
+                _reservationlogic.PlaceReservation(reservation);
+                return RedirectToAction("Succes", "Reservation");
+            }
 
+            else 
+            {
+                if (checkstartdate == false)
+                {
+                    TempData["IncorrectStartData"] = "The Startdate can not be earlier then today's date!";
+                    return View();
+                }
+                else
+                {
+                    TempData["IncorrectData"] = "The EndDate can not be earlier then the startDate!";
+                    return View();
+                }
+
+            }
         }
 
         public ActionResult Succes()
