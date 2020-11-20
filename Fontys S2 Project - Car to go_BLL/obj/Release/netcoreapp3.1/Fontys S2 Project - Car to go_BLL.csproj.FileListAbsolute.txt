@@ -1,0 +1,18 @@
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.deps.json
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.pdb
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\DTO layer.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Factories.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_DAL.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\DTO layer.pdb
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Factories.pdb
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_DAL.pdb
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.pdb
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.csprojAssemblyReference.cache
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.AssemblyInfoInputs.cache
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.AssemblyInfo.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.csproj.CoreCompileInputs.cache
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.csproj.CopyComplete
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.dll
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go_BLL\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go_BLL.pdb

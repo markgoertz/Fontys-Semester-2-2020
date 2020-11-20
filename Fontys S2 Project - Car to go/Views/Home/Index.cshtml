@@ -4,8 +4,8 @@
 @if (TempData["Update"] != null)
 {
     <strong class="alert alert-warning">@TempData["Update"]</strong>
-    <br/>
-    <br/>
+    <br />
+    <br />
 }
 @if (TempData["Delete"] != null)
 {
@@ -14,13 +14,16 @@
     <br />
 }
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h2 class="display-4 pt-3">Welcome</h2>
     <p>Search, Rent and got a Car to Go!</p>
 </div>
 
 <div class="card-deck text-center">
-    <div class="card shadow" style="width:400px">
-        <img class="card-img-top" style="height:300px;" src="https://cdn.discordapp.com/attachments/754679426339569788/754681048776048750/17VwTRo5DrYelFR1_350.png" alt="Card image">
+    <div class="card shadow" style="width:inherit">
+
+        <a href='@Url.Action("CarIndex", "Vehicle")'>
+            <img class="card-img" style="height:inherit;" src="https://cdn.discordapp.com/attachments/754679426339569788/754681048776048750/17VwTRo5DrYelFR1_350.png" alt="Cardphoto">
+        </a>
         <div class="card-body">
             <a class="h4 justify-content-center alert-link" asp-area="" asp-controller="Vehicle" asp-action="CarIndex">ALL CARS!</a>
             <p class="card-text">For carying persons around!</p>
@@ -28,16 +31,20 @@
 
     </div>
 
-    <div class="card shadow" style="width:400px;">
-        <img class="card-img-top" style="height: 300px;" src="https://cdn.discordapp.com/attachments/754679426339569788/754963447841816606/sprinter-van.png" alt="Card image">
+    <div class="card shadow" style="width:inherit;">
+        <a href='@Url.Action("VanIndex", "Vehicle")'>
+            <img class="card-img-top" style="height: auto;" src="https://cdn.discordapp.com/attachments/754679426339569788/754963447841816606/sprinter-van.png" alt="Card image">
+        </a>
         <div class="card-body">
             <a class="h4 justify-content-center alert-link" asp-area="" asp-controller="Vehicle" asp-action="VanIndex">ALL VANS!</a>
             <p class="card-text">For large cargo spaces!</p>
         </div>
     </div>
-    *
-    <div class="card shadow" style="width:400px;">
-        <img class="card-img-top" style="height: 300px;" src="https://cdn.discordapp.com/attachments/754679426339569788/762635934637883402/z17-gen-2-compact-excavator5a6af57c98c74f2a0d0beb27.png" alt="Card image">
+
+    <div class="card shadow" style="width:inherit;">
+        <a href='@Url.Action("SpecialVehicleIndex", "Vehicle")'>
+            <img class="card-img-top" style="height: auto;" src="https://cdn.discordapp.com/attachments/754679426339569788/762635934637883402/z17-gen-2-compact-excavator5a6af57c98c74f2a0d0beb27.png" alt="Card image">
+        </a>
         <div class="card-body">
             <a class="h4 justify-content-center alert-link" asp-area="" asp-controller="Vehicle" asp-action="SpecialVehicleIndex">ALL SPECIAL VEHICLES!</a>
             <p class="card-text">For the heavy work!</p>
@@ -47,12 +54,17 @@
 
 <br />
 
-<div class="card">
-    <div class="card-body shadow">
+<div class="col-12">
+    <div class="card shadow">
         <h2 class="font-weight-bold text-center p-3">Our story and journey</h2>
-        <div class="row">
-            <div class="col-6 img-fluid"><img src="https://cdn.discordapp.com/attachments/754679426339569788/754981001041805352/5388649925046e7f14e61730fc9b7ccb.png" style="width:500px; height:350px;" /></div>
-            <div class="col-6 font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet vestibulum nulla. Suspendisse rutrum, lacus a placerat tempus, tellus velit efficitur leo, id tincidunt leo risus eget libero. Nulla vestibulum metus non neque ullamcorper, non ornare est aliquam. Maecenas in libero nec ipsum dapibus pellentesque sed eu mauris. Quisque dapibus leo fringilla lorem pulvinar volutpat. Sed commodo, nibh in condimentum ultricies, diam felis ultrices purus, sed aliquam libero felis et ligula. Fusce porta placerat dolor a imperdiet. Suspendisse dapibus, nisl sed consequat sollicitudin, erat diam porta metus, tempor sodales felis lectus non arcu. Aliquam ullamcorper sagittis pharetra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In laoreet accumsan lorem, vitae rhoncus nunc consequat pellentesque. In ac ligula metus. Nullam dui lorem, viverra vel aliquam sit amet, ultrices nec ante.</div>
+        <div class="row p-2">
+            <div class="col-md-6"><img src="https://cdn.discordapp.com/attachments/754679426339569788/754981001041805352/5388649925046e7f14e61730fc9b7ccb.png" style="width:inherit; height:inherit;" /></div>
+            <div class="col-md-6 font-italic">
+                <div class="col-md-10 p-1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet vestibulum nulla. Suspendisse rutrum, lacus a placerat tempus, tellus velit efficitur leo, id tincidunt leo risus eget libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet vestibulum nulla. Suspendisse rutrum, lacus a placerat tempus, tellus velit efficitur leo, id tincidunt leo risus eget libero.
+                </div>
+
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,16 @@
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\Factories.deps.json
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\Factories.dll
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\Factories.pdb
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\DTO layer.dll
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_DAL.dll
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.dll
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_DAL.pdb
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go_Interfaces.pdb
+D:\Fontys Semester 2 2020\Factories\bin\Release\netcoreapp3.1\DTO layer.pdb
+D:\Fontys Semester 2 2020\Factories\obj\Release\netcoreapp3.1\Factories.csprojAssemblyReference.cache
+D:\Fontys Semester 2 2020\Factories\obj\Release\netcoreapp3.1\Factories.AssemblyInfoInputs.cache
+D:\Fontys Semester 2 2020\Factories\obj\Release\netcoreapp3.1\Factories.AssemblyInfo.cs
+D:\Fontys Semester 2 2020\Factories\obj\Release\netcoreapp3.1\Factories.csproj.CoreCompileInputs.cache
+D:\Fontys Semester 2 2020\Factories\obj\Release\netcoreapp3.1\Factories.csproj.CopyComplete
+D:\Fontys Semester 2 2020\Factories\obj\Release\netcoreapp3.1\Factories.dll
+D:\Fontys Semester 2 2020\Factories\obj\Release\netcoreapp3.1\Factories.pdb
