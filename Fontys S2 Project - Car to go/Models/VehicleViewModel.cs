@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -37,9 +38,10 @@ namespace Fontys_S2_Project___Car_to_go.Models
 
 
         [Display(Name = "Acceleration")]
+        [Column(TypeName = "decimal(18, 2)")]
         [Required(ErrorMessage = "This field is required!")]
-        [Range(1, 15, ErrorMessage = "The car need to have an accelaration between 1 and 15 seconds!")]
-        public double Acceleration { get; set; }
+        [Range(1.00, 15.00, ErrorMessage = "The car need to have an accelaration between 1 and 15 seconds!")]
+        public decimal Acceleration { get; set; }
 
 
         [Display(Name = "Cargospace")]

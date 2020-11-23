@@ -64,7 +64,7 @@ namespace DAL.Handler
                         Transmission = reader.GetString(3),
                         Enginepower = reader.GetInt32(4),
                         Weight = reader.GetInt32(5),
-                        Acceleration = reader.GetDouble(6),
+                        Acceleration = reader.GetDecimal(6),
                         Cargospace = reader.GetInt32(7),
                         Seat = reader.GetInt32(8),
                         RentalPrice = reader.GetDouble(9),

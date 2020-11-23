@@ -11,9 +11,10 @@ namespace Fontys_S2_Project___Car_to_go.Converters
     public class ViewModelConverter
     {
        
-        private static Vehicle _model;
+       
         private static VehicleViewModel _viewmodel;
         private static UserViewModel _userviewmodel;
+        private static ReservationViewModel _reservationViewModel;
 
         public static VehicleViewModel ConvertModelToVehicleViewModel(Vehicle model)
         {
@@ -31,6 +32,20 @@ namespace Fontys_S2_Project___Car_to_go.Converters
                 ID = model.ID, Firstname = model.Firstname,Lastname = model.Lastname, Adres = model.Adres, Email = model.Email,Housenumber = model.Housenumber, Password = model.Password ,Postalcode = model.Postalcode,Role = model.Role
             };
             return _userviewmodel;
+        }
+        public static ReservationViewModel ConvertModelToReservationViewModel(Reservation model)
+        {
+            _reservationViewModel = new ReservationViewModel()
+            {
+                ReservationID = model.ReservationID,
+                BrandName = model.BrandName,
+                EndDate = model.EndDate,
+                StartDate = model.StartDate,
+                VehicleID = model.VehicleID,
+                Email = model.Email,
+                ModelName = model.ModelName
+            };
+            return _reservationViewModel;
         }
     }
 }

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Fontys_S2_Project___Car_to_go.Models.ReservationViewModel>
+
+@{
+    ViewData["Title"] = "AllReservations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>All Reservations</h1>
+
+@if (TempData["Delete"] != null)
+ {
+    <strong class="alert alert-danger">@TempData["Delete"]</strong>
+    <br />
+    <br />
+ }
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservationID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrandName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelName)
+                </td>
+                <td>
+                    <button class="btn btn-danger text-white">@Html.ActionLink("Delete", "Delete", "Reservation", new { ID = item.ReservationID }, new { onclick = "return confirm('Are sure wants to delete?');" })</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

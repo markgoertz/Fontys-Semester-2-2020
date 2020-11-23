@@ -9,10 +9,26 @@ namespace BLL.Collections
 {
     public class ReservationCollection
     {
+        private List<Reservation> reservations;
+
         public void PlaceReservation(Reservation reservation)
         {
             var result = ReservationConverter.ConvertModelToDto(reservation);
             DalFactory.ReservationHandler.PlaceReservation(result);
+        }
+
+        public List<Reservation>GetAll()
+        {
+            var result = DalFactory.ReservationHandler.GetallReservations();
+            reservations = new List<Reservation>();
+
+            foreach (var dto in result)
+            {
+                var model = ReservationConverter.ConvertDtoToModel(dto);
+                reservations.Add(model);
+            }
+
+            return reservations;
         }
 
         public bool IsEndDateGreaterThenStartDate(Reservation reservation)

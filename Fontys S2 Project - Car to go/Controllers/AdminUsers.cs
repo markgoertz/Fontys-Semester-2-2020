@@ -32,7 +32,9 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             var all = _coll.GetUsers();
             userviews = new List<UserViewModel>();
 
+            
             foreach (var user in all)
+                
             {
                 var viewmodel = ViewModelConverter.ConvertModelToUserViewModel(user);
                 userviews.Add(viewmodel);

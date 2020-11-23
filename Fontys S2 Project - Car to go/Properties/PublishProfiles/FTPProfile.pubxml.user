@@ -6,18 +6,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgnFm9EVDcEizmwcg/YiPXwAAAAACAAAAAAAQZgAAAAEAACAAAADFynaXA0rsOpM7OW4QgQdmOlTDK9pNZ9h3EB6ztvWcqQAAAAAOgAAAAAIAACAAAAA4eg84cj/A8RfjpVXTveeZczeraDMYmTaYYk0ykKj8ZyAAAADc9mTFSuCESM3Iqx+2W7EjEWj/Bm+H0ZDe+sov10E7fUAAAAB7DVUUBvZlbphggtVMaah8eIj59wvfp2a+BegngUUYj6e6QL5qIetRN33h44vk7pamLs/d8BFEP6iARbWgS2WX</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgnFm9EVDcEizmwcg/YiPXwAAAAACAAAAAAAQZgAAAAEAACAAAAD5G3ohUJW1WSfz8/SpRSxz1bkRYNsOVpDB13XR7rrXJgAAAAAOgAAAAAIAACAAAABP2ptatck04uNV//r7LsC1QC9b19T+kFI7m9HSl4CpdCAAAABuIP/HkNOmifE3g5iGDciuaObedWeUfYaaK3IglfnGq0AAAAC5PBzcmf7dUzyH8159uvS+BJsGpDSCVoafcXfiGlAQmryHFKJmBqFeCGCeAbewmPtSyFVpnxdxaKB4ukM80xmm</EncryptedPassword>
     <_PublishTargetUrl>ftps://venus.fhict.nl:21/domains/i434548core.venus.fhict.nl/</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>12/10/2020 13:05:55</publishTime>
+      <publishTime>10/12/2020 13:05:55</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>12/10/2020 13:05:55</publishTime>
+      <publishTime>10/12/2020 13:05:55</publishTime>
     </File>
     <File Include="BouncyCastle.Crypto.dll">
-      <publishTime>05/10/2020 16:01:00</publishTime>
+      <publishTime>10/05/2020 16:01:00</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:08:58</publishTime>
@@ -44,13 +44,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
-      <publishTime>03/08/2020 18:30:10</publishTime>
+      <publishTime>08/03/2020 18:30:10</publishTime>
     </File>
     <File Include="DTO layer.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:39</publishTime>
     </File>
     <File Include="DTO layer.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:39</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:09:00</publishTime>
@@ -65,49 +65,49 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="Factories.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:41</publishTime>
     </File>
     <File Include="Factories.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:41</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.deps.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 14:56:13</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 14:56:12</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 14:56:12</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 14:56:12</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.runtimeconfig.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:44</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.Views.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 14:56:13</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.Views.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 14:56:13</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_BLL.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:42</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_BLL.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:42</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_DAL.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:41</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_DAL.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:41</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_Interfaces.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:40</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_Interfaces.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 13:03:40</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:09:00</publishTime>
@@ -158,49 +158,49 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Razor.Language.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/16/2019 06:08:46</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>12/09/2019 17:08:58</publishTime>
+      <publishTime>09/12/2019 17:08:58</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
-      <publishTime>12/09/2019 17:09:12</publishTime>
+      <publishTime>09/12/2019 17:09:12</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.dll">
-      <publishTime>12/09/2019 17:07:46</publishTime>
+      <publishTime>09/12/2019 17:07:46</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Razor.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/16/2019 06:08:52</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
-      <publishTime>12/09/2019 17:08:34</publishTime>
+      <publishTime>09/12/2019 17:08:34</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
-      <publishTime>03/08/2020 18:29:50</publishTime>
+      <publishTime>08/03/2020 18:29:50</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
-      <publishTime>03/08/2020 18:30:02</publishTime>
+      <publishTime>08/03/2020 18:30:02</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
-      <publishTime>03/08/2020 18:30:04</publishTime>
+      <publishTime>08/03/2020 18:30:04</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
-      <publishTime>03/08/2020 18:30:02</publishTime>
+      <publishTime>08/03/2020 18:30:02</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
-      <publishTime>03/08/2020 18:29:58</publishTime>
+      <publishTime>08/03/2020 18:29:58</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
-      <publishTime>03/08/2020 18:29:56</publishTime>
+      <publishTime>08/03/2020 18:29:56</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
-      <publishTime>03/08/2020 18:30:06</publishTime>
+      <publishTime>08/03/2020 18:30:06</publishTime>
     </File>
     <File Include="Newtonsoft.Json.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/24/2018 17:44:14</publishTime>
     </File>
     <File Include="NuGet.Frameworks.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2018 21:27:10</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:09:00</publishTime>
@@ -254,22 +254,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/20/2020 21:33:24</publishTime>
     </File>
     <File Include="System.Composition.AttributedModel.dll">
-      <publishTime>05/11/2016 04:55:42</publishTime>
+      <publishTime>11/05/2016 04:55:42</publishTime>
     </File>
     <File Include="System.Composition.Convention.dll">
-      <publishTime>05/11/2016 04:55:42</publishTime>
+      <publishTime>11/05/2016 04:55:42</publishTime>
     </File>
     <File Include="System.Composition.Hosting.dll">
-      <publishTime>05/11/2016 04:55:42</publishTime>
+      <publishTime>11/05/2016 04:55:42</publishTime>
     </File>
     <File Include="System.Composition.Runtime.dll">
-      <publishTime>05/11/2016 04:55:44</publishTime>
+      <publishTime>11/05/2016 04:55:44</publishTime>
     </File>
     <File Include="System.Composition.TypedParts.dll">
-      <publishTime>05/11/2016 04:55:46</publishTime>
+      <publishTime>11/05/2016 04:55:46</publishTime>
     </File>
     <File Include="System.Data.SqlClient.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/20/2020 21:21:14</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:09:00</publishTime>
@@ -284,7 +284,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/20/2020 14:56:16</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>10/12/2020 13:05:55</publishTime>

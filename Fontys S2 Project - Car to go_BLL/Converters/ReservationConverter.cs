@@ -20,6 +20,9 @@ namespace BLL.Converters
                     VehicleID = dto.VehicleID,
                     StartDate = dto.StartDate,
                     EndDate = dto.EndDate,
+                    ModelName = dto.Modelname,
+                    BrandName = dto.Brandname
+                    
                 };
 
                 return _model;
@@ -34,6 +37,9 @@ namespace BLL.Converters
                     VehicleID = model.VehicleID,
                     StartDate = model.StartDate,
                     EndDate = model.EndDate,
+                    Modelname= model.ModelName,
+                    Brandname = model.BrandName
+                    
                 };
 
                 return _dto;

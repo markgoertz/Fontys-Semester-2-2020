@@ -8,5 +8,7 @@ namespace Interfaces.IHandlers
     public interface IReservationHandler
     {
         void PlaceReservation(ReservationDTO C1);
+        void Delete(int ID);
+        List<ReservationDTO> GetallReservations();
     }
 }

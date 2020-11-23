@@ -31,5 +31,7 @@ namespace Fontys_S2_Project___Car_to_go.Models
             get { return enddate ?? DateTime.Today.Date; }
             set { enddate = value; }
         }
+        public string BrandName { get; set; }
+        public string ModelName { get; set; }
     }
 }
