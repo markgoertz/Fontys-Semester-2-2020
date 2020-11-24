@@ -27,8 +27,8 @@ namespace Fontys_S2_Project___Car_to_go
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
             {
-                options.ClaimsIssuer = "/home/NotImplemented";
-                options.LoginPath = "/user/UserLogin";
+                options.ClaimsIssuer = "/User/AccessDenied";
+                options.LoginPath = "/User/UserLogin";
                 options.LogoutPath = "/User/UserLogin";
                 options.AccessDeniedPath = "/User/AccessDenied";
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(10);

@@ -12,8 +12,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Fontys_S2_Project___Car_to_go.Controllers
 {
+
+    [Authorize(Roles = "User")]
+
     public class ReservationController : Controller
-    {
+    { 
         private readonly ReservationCollection _reservationlogic;
         private readonly Reservation _reservationmodel;
         List<ReservationViewModel> reservationViews = new List<ReservationViewModel>();
@@ -23,10 +26,6 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             _reservationlogic = new ReservationCollection();
             _reservationmodel = new Reservation();
         }
-
-
-        [Authorize(Roles = "User")]
-        [HttpGet]
 
         public ActionResult Index()
         {
@@ -44,24 +43,21 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                 }
             }
             return View(reservationViews);
-            
-           
         }
-
-
 
         public ActionResult PlaceReservation(int ID)
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.Email);
-            var registrationViewModel = new ReservationViewModel()
-            {
-                VehicleID = ID,
-                Email = claim.Value
-
-            };
-
-            return View(registrationViewModel);
+           
+                var registrationViewModel = new ReservationViewModel()
+                {
+                    VehicleID = ID,
+                    Email = claim.Value
+                    
+                };
+               
+           return View(registrationViewModel);
         }
 
         [HttpPost]  //incorrect according to SOLID-principle. To be worked on in future itterations.

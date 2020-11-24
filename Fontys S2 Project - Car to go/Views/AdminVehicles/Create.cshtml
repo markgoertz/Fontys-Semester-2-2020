@@ -80,7 +80,7 @@
                     <span asp-validation-for="Fueltype" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-sm btn-warning btn-outline-dark input text-center" type="submit" asp-controller="AdminVehicles" asp-action="Create">Add new Car!</button>
+                    <button class="btn btn-sm btn-warning btn-outline-dark input text-center" type="submit" asp-controller="AdminVehicles" asp-action="Create", new { onclick = "return confirm('Are sure wants to add?');" }>Add new Car!</button>
                 </div>
             </form>
         </div>

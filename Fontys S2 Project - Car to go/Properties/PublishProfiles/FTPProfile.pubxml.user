@@ -47,10 +47,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/03/2020 18:30:10</publishTime>
     </File>
     <File Include="DTO layer.dll">
-      <publishTime>11/20/2020 13:03:39</publishTime>
+      <publishTime>11/23/2020 21:18:18</publishTime>
     </File>
     <File Include="DTO layer.pdb">
-      <publishTime>11/20/2020 13:03:39</publishTime>
+      <publishTime>11/23/2020 21:18:18</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:09:00</publishTime>
@@ -65,49 +65,49 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="Factories.dll">
-      <publishTime>11/20/2020 13:03:41</publishTime>
+      <publishTime>11/23/2020 21:18:19</publishTime>
     </File>
     <File Include="Factories.pdb">
-      <publishTime>11/20/2020 13:03:41</publishTime>
+      <publishTime>11/23/2020 21:18:19</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.deps.json">
-      <publishTime>11/20/2020 14:56:13</publishTime>
+      <publishTime>11/24/2020 13:23:42</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.dll">
-      <publishTime>11/20/2020 14:56:12</publishTime>
+      <publishTime>11/24/2020 13:23:38</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.exe">
-      <publishTime>11/20/2020 14:56:12</publishTime>
+      <publishTime>11/24/2020 13:23:38</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.pdb">
-      <publishTime>11/20/2020 14:56:12</publishTime>
+      <publishTime>11/24/2020 13:23:38</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.runtimeconfig.json">
       <publishTime>11/20/2020 13:03:44</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.Views.dll">
-      <publishTime>11/20/2020 14:56:13</publishTime>
+      <publishTime>11/24/2020 13:23:39</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go.Views.pdb">
-      <publishTime>11/20/2020 14:56:13</publishTime>
+      <publishTime>11/24/2020 13:23:39</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_BLL.dll">
-      <publishTime>11/20/2020 13:03:42</publishTime>
+      <publishTime>11/23/2020 21:18:20</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_BLL.pdb">
-      <publishTime>11/20/2020 13:03:42</publishTime>
+      <publishTime>11/23/2020 21:18:20</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_DAL.dll">
-      <publishTime>11/20/2020 13:03:41</publishTime>
+      <publishTime>11/23/2020 21:18:19</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_DAL.pdb">
-      <publishTime>11/20/2020 13:03:41</publishTime>
+      <publishTime>11/23/2020 21:18:19</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_Interfaces.dll">
-      <publishTime>11/20/2020 13:03:40</publishTime>
+      <publishTime>11/23/2020 21:18:19</publishTime>
     </File>
     <File Include="Fontys S2 Project - Car to go_Interfaces.pdb">
-      <publishTime>11/20/2020 13:03:40</publishTime>
+      <publishTime>11/23/2020 21:18:19</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:09:00</publishTime>
@@ -284,7 +284,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>11/20/2020 14:56:16</publishTime>
+      <publishTime>11/24/2020 13:23:42</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>10/12/2020 13:05:55</publishTime>

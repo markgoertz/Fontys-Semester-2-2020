@@ -1,14 +1,16 @@
-﻿@model Fontys_S2_Project___Car_to_go.Models.UserViewModel
+﻿
+@model Fontys_S2_Project___Car_to_go.Models.UserViewModel
 
 
 <h2 class="text-center pt-3">Register now!</h2>
+<hr/>
 
-<div class="row pt-3">
+<div class="row">
     <div class="col-md-2">
 
     </div>
 
-    <div class="col-md-8 text-center p-5">
+    <div class="col-md-8 text-center">
         @if (TempData["DoubleEmails"] != null)
         {
             <strong class="alert alert-danger alert-dismissible">@TempData["DoubleEmails"]</strong>
@@ -82,16 +84,12 @@
                     <button class="btn btn-sm btn-success btn-outline-dark input text-center" type="submit" asp-controller="User" asp-action="CreateAccount">Add new Account!</button>
                 </div>
             </form>
-            </div>
-        </div>
-
-        <div class="col-md-2">
-
         </div>
     </div>
 
-<div>
-    <a asp-controller="Home" asp-action="Index">Back to List</a>
+    <div class="col-md-2">
+
+    </div>
 </div>
 
 @section Scripts {

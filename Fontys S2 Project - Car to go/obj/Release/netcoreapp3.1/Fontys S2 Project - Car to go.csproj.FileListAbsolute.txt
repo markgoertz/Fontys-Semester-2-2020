@@ -145,3 +145,4 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go.dll
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go.pdb
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go.genruntimeconfig.cache
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Razor\Views\Reservation\Index.cshtml.g.cs

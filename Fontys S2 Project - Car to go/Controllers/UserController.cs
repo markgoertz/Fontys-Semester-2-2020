@@ -14,10 +14,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Fontys_S2_Project___Car_to_go.Controllers
 {
-    
+
     public class UserController : Controller
     {
-        
+
         private readonly UserCollection _user;
         private readonly User userlogic;
         private List<UserViewModel> UVM;
@@ -89,7 +89,9 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
 
                                 await HttpContext.SignInAsync(principal);
-                                return RedirectToAction("Index", "User");
+                                TempData["LoggedIn"] = "You have logged in with your personal account.";
+                                return RedirectToAction("Index", "Home");
+
                             }
                         }
                     }
@@ -102,9 +104,9 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             }
             return View();
         }
-            
 
-       
+
+
         [HttpGet]
         public IActionResult CreateAccount()
         {
@@ -141,6 +143,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "User")]
         public ActionResult Update()
         {
             var all = _user.GetUsers();
@@ -169,12 +172,14 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "User")]
         public ActionResult Update(User model)
         {
             userlogic.Edit(model);
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index","Home");
         }
+        [Authorize(Roles = "User")]
         public IActionResult Delete(int ID)
         {
             userlogic.Delete(ID);

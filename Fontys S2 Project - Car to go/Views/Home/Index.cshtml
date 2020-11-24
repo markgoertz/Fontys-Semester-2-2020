@@ -13,6 +13,14 @@
     <br />
     <br />
 }
+@if (TempData["LoggedIn"] != null)
+{
+    <strong class="alert alert-success">@TempData["LoggedIn"]</strong>
+    <br />
+    <br />
+}
+
+
 <div class="text-center">
     <h2 class="display-4 pt-3">Welcome</h2>
     <p>Search, Rent and got a Car to Go!</p>
