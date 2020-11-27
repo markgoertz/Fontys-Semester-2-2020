@@ -1,4 +1,5 @@
 ﻿using BLL.Collections;
+using BLL.Models;
 using Car.To.Go.UnitTests.Mockdata_User;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -11,7 +12,8 @@ namespace Car.To.Go.UnitTests.Application.Layer.Tests.Collections
     [TestClass]
     public class UserCollectionTests
     {
-        private readonly UserCollection user = new UserCollection();
+        private readonly User user = new User();
+        private readonly UserCollection usercollection = new UserCollection();
 
 /*Validate Tests ------------------------------------ Validate Tests --------------------------------------------- Validate Tests ------------------------------------------------ Validate Tests ----------------------------------- */
 
@@ -63,15 +65,8 @@ namespace Car.To.Go.UnitTests.Application.Layer.Tests.Collections
         [TestMethod]
         public void GetAllUsersTest()
         {
-            var result = user.GetUsers();
+            var result = usercollection.GetUsers();
             Assert.IsNotNull(result);
-        }
-
-
-        [TestMethod]
-        public void CreateForUser()
-        {
-
         }
     }
 
