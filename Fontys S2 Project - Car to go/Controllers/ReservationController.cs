@@ -65,10 +65,21 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         {
             var checkstartdate = _reservationlogic.CorrectStartDate(reservation);
             var checkenddate = _reservationlogic.IsEndDateGreaterThenStartDate(reservation);
+
             if (checkstartdate && checkenddate == true)
             {
-                _reservationlogic.PlaceReservation(reservation);
-                return RedirectToAction("Succes", "Reservation");
+                bool status = _reservationlogic.CheckAvailable(reservation);
+                if (status == false)
+                {
+                    _reservationlogic.PlaceReservation(reservation);
+                    return RedirectToAction("Succes", "Reservation");
+                }
+
+                else
+                {
+                    TempData["TakenReservation"] = "Someone was before you! Please choose an different date!";
+                    return View();
+                }
             }
 
             else 

@@ -3,6 +3,7 @@ using Interfaces.IDBconnectionHandler;
 using Interfaces.IHandlers;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
@@ -31,6 +32,27 @@ namespace DAL.Handler
                 command.ExecuteNonQuery();
             }
         }
+
+        public bool CheckForDoubleReservations(ReservationDTO C1)
+        {
+            using (_dbCon.Open())
+            {
+                using SqlCommand command = new SqlCommand("CheckValues", _dbCon.Connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                command.Parameters.AddWithValue("@VehicleID", C1.VehicleID);
+                command.Parameters.AddWithValue("@StartDate", C1.StartDate);
+                command.Parameters.AddWithValue("@EndDate", C1.EndDate);
+
+                var result = (int) command.ExecuteScalar();
+                return result != 0;
+               
+            } 
+        }
+
+       
 
         public List<ReservationDTO>GetallReservations()
         {

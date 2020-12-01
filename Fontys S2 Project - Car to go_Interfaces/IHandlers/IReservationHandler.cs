@@ -10,5 +10,6 @@ namespace Interfaces.IHandlers
         void PlaceReservation(ReservationDTO C1);
         void Delete(int ID);
         List<ReservationDTO> GetallReservations();
+        bool CheckForDoubleReservations(ReservationDTO C1);
     }
 }

@@ -17,7 +17,7 @@ namespace BLL.Collections
             DalFactory.ReservationHandler.PlaceReservation(result);
         }
 
-        public List<Reservation>GetAll()
+        public List<Reservation> GetAll()
         {
             var result = DalFactory.ReservationHandler.GetallReservations();
             reservations = new List<Reservation>();
@@ -60,5 +60,11 @@ namespace BLL.Collections
 
             return status;
         }
+
+        public bool CheckAvailable(Reservation reservation)
+        {
+            var result = ReservationConverter.ConvertModelToDto(reservation);
+            return DalFactory.ReservationHandler.CheckForDoubleReservations(result);
+        } 
     }
 }
