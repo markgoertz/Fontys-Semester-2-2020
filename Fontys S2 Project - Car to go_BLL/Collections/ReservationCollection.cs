@@ -1,4 +1,5 @@
 ﻿using BLL.Converters;
+using BLL.Logic_interfaces.Collection_Interfaces;
 using BLL.Models;
 using Factories;
 using System;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace BLL.Collections
 {
-    public class ReservationCollection
+    public class ReservationCollection : IReservationCollection
     {
         private List<Reservation> reservations;
 

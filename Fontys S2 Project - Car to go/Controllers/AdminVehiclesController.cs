@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BLL;
-using BLL.Models;
 using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Logic_interfaces;
@@ -19,10 +17,10 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         private readonly IVehicle vehicle;
         List<VehicleViewModel> vehicleViews = new List<VehicleViewModel>();
 
-        public AdminVehiclesController()
+        public AdminVehiclesController(IVehicle ivehicle, IVehicleCollection icollection)
         {
-            _coll = new VehicleCollection();
-            vehicle = new Vehicle();
+            _coll = icollection;
+            vehicle = ivehicle;
         }
 
 /* INDEX ------------------------------------------- INDEX ------------------------------------------------------ INDEX --------------------------------------------------- INDEX ------------------------------------ INDEX*/
@@ -50,9 +48,10 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         }
      
         [HttpPost]
-        public ActionResult Create(Vehicle car)
+        public ActionResult Create(VehicleViewModel vehicle)
         {
-            _coll.Create(car);
+            var convertedmodel = ViewModelConverter.ConvertVehicleViewModelToModel(vehicle);
+            _coll.Create(convertedmodel);
             TempData["Create"] = "The records has been added to the system!";
             return RedirectToAction("Index");
 
@@ -64,37 +63,24 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public ActionResult Update(int ID)
         {
             var all = _coll.GetAllCars();
-            var items = new VehicleViewModel();
-            foreach (var car in all)
+            vehicleViews = new List<VehicleViewModel>();
+
+            foreach (var vehicle in all)
             {
-                if (ID == car.ID)
+                if (ID == vehicle.ID)
                 {
-                   items = new VehicleViewModel()
-                   { 
-                        ID = car.ID,
-                        Seat = car.Seat,
-                        Enginepower = car.Enginepower,
-                        Acceleration = car.Acceleration,
-                        Brandname = car.Brandname,
-                        Cargospace = car.Cargospace,
-                        Modelname = car.Modelname,
-                        RentalPrice = car.RentalPrice,
-                        Transmission = car.Transmission,
-                        Weight = car.Weight,
-                        Fueltype = car.Fueltype,
-                        ImageLink = car.ImageLink,
-                        CategoryID = car.CategoryID
-                   };
-                    
+                    var result = ViewModelConverter.ConvertModelToVehicleViewModel(vehicle);
+                    vehicleViews.Add(result);
                 }
             }
-            return View(items);
+            return View(vehicleViews);
         }
 
         [HttpPost]
-        public ActionResult Update(Vehicle model)
+        public ActionResult Update(VehicleViewModel viewmodel)
         {
-            vehicle.Edit(model);
+            var convertedmodel = ViewModelConverter.ConvertVehicleViewModelToModel(viewmodel);
+            vehicle.Edit(convertedmodel);
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index");
         }

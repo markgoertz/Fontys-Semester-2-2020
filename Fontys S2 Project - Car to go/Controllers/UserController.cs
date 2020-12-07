@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using BLL.Collections;
 using BLL.Models;
+using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Logic_interfaces;
 using Microsoft.AspNetCore.Authentication;
@@ -15,16 +16,15 @@ using Microsoft.AspNetCore.Mvc;
 namespace Fontys_S2_Project___Car_to_go.Controllers
 {
 
-    public class UserController : Controller
+    public class UserController : Controller 
     {
-
-        private readonly UserCollection _user;
-        private readonly User userlogic;
+        private readonly IUserCollection _user;
+        private readonly IUser userlogic;
         private List<UserViewModel> UVM;
-        public UserController()
+        public UserController(IUserCollection usercollection, IUser userrichmodel)
         {
-            _user = new UserCollection();
-            userlogic = new User();
+            _user = usercollection;
+            userlogic = userrichmodel;
         }
         public IActionResult Index()
         {
@@ -115,9 +115,10 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateAccount(User user)
+        public ActionResult CreateAccount(UserViewModel user)
         {
-            var check = userlogic.CheckDoubleEmails(user);
+            var converted = ViewModelConverter.ConvertUserViewModelToModel(user);
+            var check = userlogic.CheckDoubleEmails(converted);
             if (check == true)
             {
                  TempData["DoubleEmails"] = "The specified email is already known in our system.";
@@ -125,7 +126,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             }
             else
             {
-                _user.Create(user);
+                _user.Create(converted);
             }
             return RedirectToAction("Index");
         }

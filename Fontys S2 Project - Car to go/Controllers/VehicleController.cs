@@ -15,9 +15,9 @@ namespace Car_to_go.Controllers
         private readonly IVehicleCollection _coll;
         List<VehicleViewModel> vehicleViews = new List<VehicleViewModel>();
 
-        public VehicleController()
+        public VehicleController(IVehicleCollection collection)
         {
-            _coll = new VehicleCollection();
+            _coll = collection;
         }
         public IActionResult CarIndex()
         {

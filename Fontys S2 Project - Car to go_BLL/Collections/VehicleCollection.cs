@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BLL
+namespace BLL.Collections
 {
     public class VehicleCollection : IVehicleCollection
     {

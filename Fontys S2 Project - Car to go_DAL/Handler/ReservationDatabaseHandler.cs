@@ -11,7 +11,6 @@ namespace DAL.Handler
 {
     public class ReservationDatabaseHandler : IReservationHandler
     {
-        private static readonly string connectionString = "";
         private readonly IDBConnectionHandler _dbCon;
         public ReservationDatabaseHandler (IDBConnectionHandler dbCon)
         {
@@ -47,8 +46,7 @@ namespace DAL.Handler
                 command.Parameters.AddWithValue("@EndDate", C1.EndDate);
 
                 var result = (int) command.ExecuteScalar();
-                return result != 0;
-               
+                return result != 0; 
             } 
         }
 

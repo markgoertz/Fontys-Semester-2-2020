@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BLL.Collections;
-using BLL.Models;
 using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
+using Logic_interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,14 +14,14 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminUsers : Controller
     {
-        private readonly UserCollection _coll;
-        private readonly User user;
+        private readonly IUserCollection _coll;
+        private readonly IUser _user;
         List<UserViewModel> userviews = new List<UserViewModel>();
 
-        public AdminUsers()
+        public AdminUsers(IUserCollection collection, IUser user)
         {
-            _coll = new UserCollection();
-            user = new User();
+            _coll = collection;
+            _user = user;
         }
 
         /* INDEX ------------------------------------------- INDEX ------------------------------------------------------ INDEX --------------------------------------------------- INDEX ------------------------------------ INDEX*/
@@ -32,9 +31,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             var all = _coll.GetUsers();
             userviews = new List<UserViewModel>();
 
-            
-            foreach (var user in all)
-                
+            foreach (var user in all)   
             {
                 var viewmodel = ViewModelConverter.ConvertModelToUserViewModel(user);
                 userviews.Add(viewmodel);
@@ -52,9 +49,11 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(User usercheck)
+        public IActionResult Create(UserViewModel usercheck)
         {
-            var check = user.CheckDoubleEmails(usercheck);
+            var convertedmodel = ViewModelConverter.ConvertUserViewModelToModel(usercheck);
+            var check = _user.CheckDoubleEmails(convertedmodel);
+
             if (check == true)
             {
                 TempData["DoubleEmails"] = "The specified email is already known in our system.";
@@ -62,48 +61,63 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             }
             else
             {
-                _coll.Create(user);
+                _coll.Create(convertedmodel);
             }
+
             return RedirectToAction("Index");
         }
-    
 
-        
+
+
         /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
 
         [HttpGet]
         public ActionResult Update(int ID)
         {
             var all = _coll.GetUsers();
-            var items = new UserViewModel();
+            
+
             foreach (var user in all)
             {
+                //when the ID's are equal. This ID's will be chosen, and all the information that carries with the ID will be writen.
                 if (ID == user.ID)
                 {
-                    items = new UserViewModel()
+                    var uservm = new UserViewModel()
                     {
-                        ID = user.ID, Firstname = user.Firstname, Lastname = user.Lastname, Adres = user.Adres, Email = user.Email, Housenumber = user.Housenumber, Password = user.Password, Postalcode = user.Postalcode, Role = user.Role
+                        ID = user.ID,
+                        Email = user.Email,
+                        Adres = user.Adres,
+                        Firstname = user.Firstname,
+                        Housenumber = user.Housenumber,
+                        Lastname = user.Lastname,
+                        Password = user.Password,
+                        Postalcode = user.Postalcode,
+                        Role = user.Role
                     };
 
+                    return View(uservm);
                 }
-            }
-            return View(items);
+            } 
+            return View();
+
         }
 
         [HttpPost]
-        public ActionResult Update(User model)
+        public ActionResult Update(UserViewModel model)
         {
-            user.Edit(model);
+            var converted = ViewModelConverter.ConvertUserViewModelToModel(model);
+            _user.Edit(converted);
+
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index");
         }
 
 
-        /* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
+/* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
 
         public IActionResult Delete(int ID)
         {
-            user.Delete(ID);
+            _user.Delete(ID);
             TempData["Delete"] = "The records has been deleted from the system!";
             return RedirectToAction("Index");
         }

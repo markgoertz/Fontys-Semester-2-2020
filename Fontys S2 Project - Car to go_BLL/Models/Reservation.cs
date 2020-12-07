@@ -1,4 +1,5 @@
 ﻿using BLL.Converters;
+using BLL.Logic_interfaces;
 using Factories;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace BLL.Models
 {
-    public class Reservation
+    public class Reservation : IReservation
     {
         public int ReservationID { get; set; }
         public string Email { get; set; }

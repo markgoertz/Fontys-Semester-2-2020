@@ -2,6 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL;
+using BLL.Collections;
+using BLL.Logic_interfaces;
+using BLL.Logic_interfaces.Collection_Interfaces;
+using BLL.Models;
+using DAL.DatabaseConnectionHandler;
+using Logic_interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,9 +21,11 @@ namespace Fontys_S2_Project___Car_to_go
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private string ConnectionString="";
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            configuration = new ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build();
+            ConnectionString = configuration["ConnectionStrings:DefaultConnection"];
         }
 
         public IConfiguration Configuration { get; }
@@ -37,6 +46,12 @@ namespace Fontys_S2_Project___Car_to_go
             });
 
             services.AddControllersWithViews();
+            services.AddScoped<IUserCollection, UserCollection>();
+            services.AddScoped<IUser, User>();
+            services.AddScoped<IReservation, Reservation>();
+            services.AddScoped<IReservationCollection, ReservationCollection>();
+            services.AddScoped<IVehicle, Vehicle>();
+            services.AddScoped<IVehicleCollection, VehicleCollection>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +81,9 @@ namespace Fontys_S2_Project___Car_to_go
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            DBConnectionHandler.SetConnectionString(ConnectionString);
+            
         }
     }
 }

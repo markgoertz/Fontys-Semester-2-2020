@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using BLL.Collections;
-using BLL.Models;
+using BLL.Logic_interfaces;
+using BLL.Logic_interfaces.Collection_Interfaces;
 using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -17,14 +17,13 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
     public class ReservationController : Controller
     { 
-        private readonly ReservationCollection _reservationlogic;
-        private readonly Reservation _reservationmodel;
-        List<ReservationViewModel> reservationViews = new List<ReservationViewModel>();
-
-        public ReservationController()
+        private readonly IReservationCollection _reservationlogic;
+        private readonly IReservation _reservationmodel;
+        
+        public ReservationController(IReservation reservation, IReservationCollection reservationCollection)
         {
-            _reservationlogic = new ReservationCollection();
-            _reservationmodel = new Reservation();
+            _reservationlogic = reservationCollection;
+            _reservationmodel = reservation;
         }
 
         public ActionResult Index()
@@ -32,14 +31,12 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             var all = _reservationlogic.GetAll();
             var reservationViews = new List<ReservationViewModel>();
 
-
             foreach (var item in all)
             {
                 if (User.HasClaim(ClaimTypes.Email, item.Email))
                 {
                     var viewmodel = ViewModelConverter.ConvertModelToReservationViewModel(item);
                     reservationViews.Add(viewmodel);
-                    
                 }
             }
             return View(reservationViews);
@@ -52,26 +49,26 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
            
                 var registrationViewModel = new ReservationViewModel()
                 {
-                    VehicleID = ID,
-                    Email = claim.Value
-                    
+                    VehicleID = ID, Email = claim.Value
                 };
                
            return View(registrationViewModel);
         }
 
         [HttpPost]  //incorrect according to SOLID-principle. To be worked on in future itterations.
-        public ActionResult PlaceReservation(Reservation reservation)
+        public ActionResult PlaceReservation(ReservationViewModel reservationviewmodel)
         {
-            var checkstartdate = _reservationlogic.CorrectStartDate(reservation);
-            var checkenddate = _reservationlogic.IsEndDateGreaterThenStartDate(reservation);
+            var convertedmodel = ViewModelConverter.ConvertReservationViewModelToModel(reservationviewmodel);
+
+            var checkstartdate = _reservationlogic.CorrectStartDate(convertedmodel);
+            var checkenddate = _reservationlogic.IsEndDateGreaterThenStartDate(convertedmodel);
 
             if (checkstartdate && checkenddate == true)
             {
-                bool status = _reservationlogic.CheckAvailable(reservation);
+                bool status = _reservationlogic.CheckAvailable(convertedmodel);
                 if (status == false)
                 {
-                    _reservationlogic.PlaceReservation(reservation);
+                    _reservationlogic.PlaceReservation(convertedmodel);
                     return RedirectToAction("Succes", "Reservation");
                 }
 

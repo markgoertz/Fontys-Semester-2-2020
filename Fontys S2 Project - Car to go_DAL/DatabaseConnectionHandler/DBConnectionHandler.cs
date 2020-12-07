@@ -8,7 +8,13 @@ namespace DAL.DatabaseConnectionHandler
 {
     public class DBConnectionHandler : IDBConnectionHandler 
     {
-        private protected string connectionString = "Server=mssql.fhict.local;Database=dbi434548;User Id = dbi434548; Password=MijnFontysServer2020";
+        private static string connectionString = "";
+
+        public static void SetConnectionString(string constring)
+        {
+            connectionString = constring;
+        }
+
         public SqlConnection Connection { get; private set; }
         public SqlConnection Open()
         {

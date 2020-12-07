@@ -8,10 +8,8 @@ using System.Text;
 
 namespace BLL.Models
 {
-    public class User 
+    public class User:IUser
     { 
-        private List<User> users;
-
         public int ID { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
@@ -38,8 +36,9 @@ namespace BLL.Models
                 if (account.Email == user.Email)
                 {
                     status = true;
-                    return status;
+                   return status;
                 }
+                
             }
             return status;
         }
