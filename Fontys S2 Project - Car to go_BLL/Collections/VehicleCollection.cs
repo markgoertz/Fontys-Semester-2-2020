@@ -16,8 +16,8 @@ namespace BLL.Collections
             var result = ModelConverter.ConvertModelToDto(car);
             DalFactory.VehicleHandler.Create(result);
         }
-    
-        public List<Vehicle> GetAllCars()
+
+        public List<Vehicle> GetAllVehicles()
         {
             var result = DalFactory.VehicleHandler.GetAll();
             vehicles = new List<Vehicle>();
@@ -27,8 +27,72 @@ namespace BLL.Collections
                 var model = ModelConverter.ConvertDtoToModel(dto);
                 vehicles.Add(model);
             }
+            return vehicles;
+        }
+
+
+        public List<Vehicle> GetAllCars()
+        {
+            var result = DalFactory.VehicleHandler.GetAll();
+            vehicles = new List<Vehicle>();
+
+            foreach (var dto in result)
+            {
+                if (dto.CategoryID == 1)
+                {
+                    var model = ModelConverter.ConvertDtoToModel(dto);
+                    vehicles.Add(model);
+                }
+            }
 
             return vehicles;
+        }
+
+        public List<Vehicle> GetAllVans()
+        {
+            var result = DalFactory.VehicleHandler.GetAll();
+            vehicles = new List<Vehicle>();
+
+            foreach (var dto in result)
+            {
+                if (dto.CategoryID == 2)
+                {
+                    var model = ModelConverter.ConvertDtoToModel(dto);
+                    vehicles.Add(model);
+                }
+            }
+
+            return vehicles;
+        }
+        public List<Vehicle> GetAllSpecials()
+        {
+            var result = DalFactory.VehicleHandler.GetAll();
+            vehicles = new List<Vehicle>();
+
+            foreach (var dto in result)
+            {
+                if (dto.CategoryID == 3)
+                {
+                    var model = ModelConverter.ConvertDtoToModel(dto);
+                    vehicles.Add(model);
+                }
+            }
+
+            return vehicles;
+        }
+
+        public Vehicle GetByID(int ID)
+        {
+            var result = GetAllVehicles();
+            Vehicle vehicle = null;
+            foreach (var item in result)
+            {
+                if(item.ID == ID)
+                {
+                    vehicle = item;
+                }
+            }
+            return vehicle;
         }
     }
 }

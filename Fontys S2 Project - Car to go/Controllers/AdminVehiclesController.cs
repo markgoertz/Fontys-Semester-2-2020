@@ -27,7 +27,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
         public IActionResult Index()
         {
-            var all = _coll.GetAllCars();
+            var all = _coll.GetAllVehicles();
             vehicleViews = new List<VehicleViewModel>();
 
             foreach (var vehicle in all)
@@ -62,25 +62,15 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpGet]
         public ActionResult Update(int ID)
         {
-            var all = _coll.GetAllCars();
-            vehicleViews = new List<VehicleViewModel>();
-
-            foreach (var vehicle in all)
-            {
-                if (ID == vehicle.ID)
-                {
-                    var result = ViewModelConverter.ConvertModelToVehicleViewModel(vehicle);
-                    vehicleViews.Add(result);
-                }
-            }
-            return View(vehicleViews);
+            var all = _coll.GetByID(ID);
+            var result = ViewModelConverter.ConvertModelToVehicleViewModel(all);  
+            return View(result);
         }
 
         [HttpPost]
         public ActionResult Update(VehicleViewModel viewmodel)
         {
-            var convertedmodel = ViewModelConverter.ConvertVehicleViewModelToModel(viewmodel);
-            vehicle.Edit(convertedmodel);
+            vehicle.Edit(ViewModelConverter.ConvertVehicleViewModelToModel(viewmodel));
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index");
         }

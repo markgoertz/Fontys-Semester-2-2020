@@ -38,8 +38,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             {
                 if (User.HasClaim(ClaimTypes.Email, item.Email))
                 {
-                    var viewmodel = ViewModelConverter.ConvertModelToReservationViewModel(item);
-                    reservationViews.Add(viewmodel);
+                    reservationViews.Add(ViewModelConverter.ConvertModelToReservationViewModel(item));
                 }
             }
             return View(reservationViews);

@@ -174,12 +174,13 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
         [HttpPost]
         [Authorize(Roles = "User")]
-        public ActionResult Update(User model)
+        public ActionResult Update(UserViewModel model)
         {
-            userlogic.Edit(model);
+            userlogic.Edit(ViewModelConverter.ConvertUserViewModelToModel(model));
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index","Home");
         }
+
         [Authorize(Roles = "User")]
         public IActionResult Delete(int ID)
         {

@@ -24,73 +24,39 @@ namespace Car_to_go.Controllers
             var all = _coll.GetAllCars();
             foreach (var vehicle in all)
             {
-                if (vehicle.CategoryID == 1)
-                {
-                    var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(vehicle);
-                    vehicleViews.Add(viewmodel);
-                }        
+               vehicleViews.Add(ViewModelConverter.ConvertModelToVehicleViewModel(vehicle));
             }
             return View(vehicleViews);
         }
 
         public IActionResult VanIndex()
         {
-            var all = _coll.GetAllCars();
-            vehicleViews = new List<VehicleViewModel>();
-
-            foreach (var van in all)
+            var all = _coll.GetAllVans();
+            foreach (var vehicle in all)
             {
-                if (van.CategoryID == 2)
-                {
-                    var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(van);
-                    vehicleViews.Add(viewmodel);
-                }
-
+                vehicleViews.Add(ViewModelConverter.ConvertModelToVehicleViewModel(vehicle));
             }
             return View(vehicleViews);
         }
 
         public IActionResult SpecialVehicleIndex()
         {
-            var all = _coll.GetAllCars();
-            vehicleViews = new List<VehicleViewModel>();
-
-            foreach (var specialvehicle in all)
+            var all = _coll.GetAllSpecials();
+            foreach (var vehicle in all)
             {
-                if (specialvehicle.CategoryID == 3)
-                {
-                    var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(specialvehicle);
-                    vehicleViews.Add(viewmodel);
-                }
-
+               vehicleViews.Add(ViewModelConverter.ConvertModelToVehicleViewModel(vehicle));
             }
             return View(vehicleViews);
         }
 
 
-        public ActionResult Details(int? ID)
+        public ActionResult Details(int ID)
         {
-            var all = _coll.GetAllCars();
+            var all = _coll.GetByID(ID);
             
-            //If the ID isn't equil to Null-value, the if-statement is executed.
-            if (ID != null)
-            {
-                //Here it count with int 'i' and it keeps counting 'til the max value of all is counted.
-                for (int i = 0; i < all.Count; i++)
-                {
-                    //When ID is equil to all; the program will 'copy' all values of Vehicleviewmodel and add it to VVM.
-                    if (ID == all[i].ID)
-                    {
-                        var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(all[i]);
-                        vehicleViews.Add(viewmodel);
-                    }
-                }
-            }
-            else
-            {
-                //Hier kan een exception komen voor meer voortgang.
-            }
-
+            var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(all);
+            vehicleViews.Add(viewmodel);
+                    
             return View(vehicleViews);
         }
     }

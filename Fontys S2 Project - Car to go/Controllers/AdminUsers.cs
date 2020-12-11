@@ -33,8 +33,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
             foreach (var user in all)   
             {
-                var viewmodel = ViewModelConverter.ConvertModelToUserViewModel(user);
-                userviews.Add(viewmodel);
+                userviews.Add(ViewModelConverter.ConvertModelToUserViewModel(user));
             }
 
             return View(userviews);
@@ -75,40 +74,16 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpGet]
         public ActionResult Update(int ID)
         {
-            var all = _coll.GetUsers();
-            
-
-            foreach (var user in all)
-            {
-                //when the ID's are equal. This ID's will be chosen, and all the information that carries with the ID will be writen.
-                if (ID == user.ID)
-                {
-                    var uservm = new UserViewModel()
-                    {
-                        ID = user.ID,
-                        Email = user.Email,
-                        Adres = user.Adres,
-                        Firstname = user.Firstname,
-                        Housenumber = user.Housenumber,
-                        Lastname = user.Lastname,
-                        Password = user.Password,
-                        Postalcode = user.Postalcode,
-                        Role = user.Role
-                    };
-
-                    return View(uservm);
-                }
-            } 
-            return View();
+            var user = _coll.GetByID(ID);
+            var result = ViewModelConverter.ConvertModelToUserViewModel(user);
+            return View(result);
 
         }
 
         [HttpPost]
         public ActionResult Update(UserViewModel model)
         {
-            var converted = ViewModelConverter.ConvertUserViewModelToModel(model);
-            _user.Edit(converted);
-
+            _user.Edit(ViewModelConverter.ConvertUserViewModelToModel(model));
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index");
         }

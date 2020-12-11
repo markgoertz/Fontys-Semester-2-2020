@@ -25,6 +25,20 @@ namespace BLL.Collections
             return user;
         }
 
+        public User GetByID(int ID)
+        {
+            var result = GetUsers();
+            User user = null;
+            foreach (var item in result)
+            {
+                if (item.ID == ID)
+                {
+                    user = item;
+                }
+            }
+            return user;
+        }
+
         public void Create(User user)
         {
             var result = UserModelConverter.ConvertModelToDto(user);
