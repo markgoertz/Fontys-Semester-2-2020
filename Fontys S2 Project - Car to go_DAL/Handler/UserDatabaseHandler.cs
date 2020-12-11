@@ -11,7 +11,7 @@ namespace DAL.Handler
 {
     public class UserDatabaseHandler : IUserHandler
     {
-        private static readonly string connectionString = "";
+      
         private readonly IDBConnectionHandler _dbCon;
         public UserDatabaseHandler(IDBConnectionHandler dbCon)
         {

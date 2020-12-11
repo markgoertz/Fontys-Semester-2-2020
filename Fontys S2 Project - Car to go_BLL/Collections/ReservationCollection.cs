@@ -43,9 +43,16 @@ namespace BLL.Collections
                 status = true;
                 return status;
             }
+            else
+            {
+                
+            }
 
             return status;
         }
+
+
+        
 
         public bool CorrectStartDate(Reservation reservation)
         {

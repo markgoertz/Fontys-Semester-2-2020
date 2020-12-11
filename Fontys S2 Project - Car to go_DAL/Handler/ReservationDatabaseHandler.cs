@@ -58,7 +58,7 @@ namespace DAL.Handler
             using (_dbCon.Open())
             {
         
-                string query = "SELECT [Vehicle].[Brandname], [Vehicle].[Modelname], [Reservations].[ReservationID], [Reservations].[StartDate], [Reservations].[EndDate], [Reservations].[Email]" +
+                string query = "SELECT [Vehicle].[Brandname], [Vehicle].[Modelname], [Reservations].[ReservationID], [Reservations].[StartDate], [Reservations].[EndDate], [Reservations].[Email], [Reservations].[VehicleID]" +
                                "FROM [Dbo].[Reservations]" +
                                "INNER JOIN [Dbo].[Vehicle]" +
                                "ON [Reservations].[VehicleID] = [Vehicle].[ID]" +
@@ -76,6 +76,7 @@ namespace DAL.Handler
                         StartDate= reader.GetDateTime(3),
                         EndDate= reader.GetDateTime(4),
                         Email = reader.GetString(5),
+                        VehicleID = reader.GetInt32(6)
                        
                     };
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using BLL.BLL_Services;
 using BLL.Logic_interfaces;
 using BLL.Logic_interfaces.Collection_Interfaces;
 using Fontys_S2_Project___Car_to_go.Converters;
@@ -19,11 +20,13 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
     { 
         private readonly IReservationCollection _reservationlogic;
         private readonly IReservation _reservationmodel;
+        private readonly ReservationServices services;
         
         public ReservationController(IReservation reservation, IReservationCollection reservationCollection)
         {
             _reservationlogic = reservationCollection;
             _reservationmodel = reservation;
+            services = new ReservationServices();
         }
 
         public ActionResult Index()
@@ -55,43 +58,21 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
            return View(registrationViewModel);
         }
 
-        [HttpPost]  //incorrect according to SOLID-principle. To be worked on in future itterations.
+        [HttpPost]
         public ActionResult PlaceReservation(ReservationViewModel reservationviewmodel)
         {
             var convertedmodel = ViewModelConverter.ConvertReservationViewModelToModel(reservationviewmodel);
+            bool result = services.CheckForDate(convertedmodel);
 
-            var checkstartdate = _reservationlogic.CorrectStartDate(convertedmodel);
-            var checkenddate = _reservationlogic.IsEndDateGreaterThenStartDate(convertedmodel);
-
-            if (checkstartdate && checkenddate == true)
+            if (result)
             {
-                bool status = _reservationlogic.CheckAvailable(convertedmodel);
-                if (status == false)
-                {
-                    _reservationlogic.PlaceReservation(convertedmodel);
-                    return RedirectToAction("Succes", "Reservation");
-                }
-
-                else
-                {
-                    TempData["TakenReservation"] = "Someone was before you! Please choose an different date!";
-                    return View();
-                }
+                _reservationlogic.PlaceReservation(convertedmodel);
+                return RedirectToAction("Succes");
             }
-
-            else 
+            else
             {
-                if (checkstartdate == false)
-                {
-                    TempData["IncorrectStartData"] = "The Startdate can not be earlier then today's date!";
-                    return View();
-                }
-                else
-                {
-                    TempData["IncorrectData"] = "The EndDate can not be earlier then the startDate!";
-                    return View();
-                }
-
+                TempData["TakenReservation"] = "Someone was before you! Please choose an different date!";
+                return View();
             }
         }
 

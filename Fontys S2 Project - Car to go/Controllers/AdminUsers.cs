@@ -36,6 +36,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
                 var viewmodel = ViewModelConverter.ConvertModelToUserViewModel(user);
                 userviews.Add(viewmodel);
             }
+
             return View(userviews);
         }
 
