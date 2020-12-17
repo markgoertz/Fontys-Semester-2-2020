@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using BLL.BLL_Services;
+
 using BLL.Logic_interfaces;
 using BLL.Logic_interfaces.Collection_Interfaces;
-using Fontys_S2_Project___Car_to_go.Converters;
+using Logic_interfaces.Services_Interfaces;
+
 using Fontys_S2_Project___Car_to_go.Models;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,13 +22,13 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
     { 
         private readonly IReservationCollection _reservationlogic;
         private readonly IReservation _reservationmodel;
-        private readonly ReservationServices services;
+        private readonly IReservationServices services;
         
-        public ReservationController(IReservation reservation, IReservationCollection reservationCollection)
+        public ReservationController(IReservation reservation, IReservationCollection reservationCollection, IReservationServices reservationservices)
         {
             _reservationlogic = reservationCollection;
             _reservationmodel = reservation;
-            services = new ReservationServices();
+            services = reservationservices;
         }
 
         public ActionResult Index()
@@ -38,7 +40,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
             {
                 if (User.HasClaim(ClaimTypes.Email, item.Email))
                 {
-                    reservationViews.Add(ViewModelConverter.ConvertModelToReservationViewModel(item));
+                    reservationViews.Add(ReservationViewModel.ConvertModelToReservationViewModel(item));
                 }
             }
             return View(reservationViews);
@@ -60,7 +62,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult PlaceReservation(ReservationViewModel reservationviewmodel)
         {
-            var convertedmodel = ViewModelConverter.ConvertReservationViewModelToModel(reservationviewmodel);
+            var convertedmodel = ReservationViewModel.ConvertReservationViewModelToModel(reservationviewmodel);
             bool result = services.CheckForDate(convertedmodel);
 
             if (result)

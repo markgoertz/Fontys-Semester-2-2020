@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL;
+using BLL.BLL_Services;
 using BLL.Collections;
 using BLL.Logic_interfaces;
 using BLL.Logic_interfaces.Collection_Interfaces;
 using BLL.Models;
 using DAL.DatabaseConnectionHandler;
 using Logic_interfaces;
+using Logic_interfaces.Services_Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -52,6 +54,7 @@ namespace Fontys_S2_Project___Car_to_go
             services.AddScoped<IReservationCollection, ReservationCollection>();
             services.AddScoped<IVehicle, Vehicle>();
             services.AddScoped<IVehicleCollection, VehicleCollection>();
+            services.AddScoped<IReservationServices, ReservationServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

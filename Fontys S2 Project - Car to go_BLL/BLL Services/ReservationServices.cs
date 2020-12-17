@@ -1,13 +1,14 @@
 ﻿using BLL.Collections;
 using BLL.Converters;
 using BLL.Models;
+using Logic_interfaces.Services_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BLL.BLL_Services
 {
-    public class ReservationServices
+    public class ReservationServices : IReservationServices
     {
         ReservationCollection reservationcollection = new ReservationCollection();
        

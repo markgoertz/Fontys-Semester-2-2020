@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Logic_interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -32,7 +31,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
             foreach (var vehicle in all)
             {
-                var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(vehicle);
+                var viewmodel = VehicleViewModel.ConvertModelToVehicleViewModel(vehicle);
                 vehicleViews.Add(viewmodel);
             }
             return View(vehicleViews);
@@ -50,11 +49,10 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult Create(VehicleViewModel vehicle)
         {
-            var convertedmodel = ViewModelConverter.ConvertVehicleViewModelToModel(vehicle);
+            var convertedmodel = VehicleViewModel.ConvertVehicleViewModelToModel(vehicle);
             _coll.Create(convertedmodel);
             TempData["Create"] = "The records has been added to the system!";
             return RedirectToAction("Index");
-
         }
 
 /* UPDATE ------------------------------------------- UPDATE ------------------------------------------------------ UPDATE --------------------------------------------------- UPDATE ------------------------------------ UPDATE*/
@@ -63,20 +61,20 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public ActionResult Update(int ID)
         {
             var all = _coll.GetByID(ID);
-            var result = ViewModelConverter.ConvertModelToVehicleViewModel(all);  
+            var result = VehicleViewModel.ConvertModelToVehicleViewModel(all);  
             return View(result);
         }
 
         [HttpPost]
         public ActionResult Update(VehicleViewModel viewmodel)
         {
-            vehicle.Edit(ViewModelConverter.ConvertVehicleViewModelToModel(viewmodel));
+            vehicle.Edit(VehicleViewModel.ConvertVehicleViewModelToModel(viewmodel));
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index");
         }
 
 
-        /* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
+/* DELETE ------------------------------------------- DELETE ------------------------------------------------------ DELETE --------------------------------------------------- DELETE ------------------------------------ DELETE*/
 
         public IActionResult Delete(int ID)
         {           

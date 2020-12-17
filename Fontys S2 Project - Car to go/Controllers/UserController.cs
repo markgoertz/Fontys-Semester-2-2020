@@ -4,9 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using BLL.Collections;
-using BLL.Models;
-using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Logic_interfaces;
 using Microsoft.AspNetCore.Authentication;
@@ -39,19 +36,11 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UserLogin([Bind] User user)
+        public async Task<IActionResult> UserLogin([Bind] UserLoginViewModel user)
         {
-            ModelState.Remove("ID");
-            ModelState.Remove("FirstName");
-            ModelState.Remove("LastName");
-            ModelState.Remove("Postalcode");
-            ModelState.Remove("Housenumber");
-            ModelState.Remove("Adres");
-
-
             if (ModelState.IsValid)
             {
-                string LoginStatus = userlogic.ValidateLogin(user);
+                string LoginStatus = userlogic.ValidateLogin(UserLoginViewModel.ConvertViewModelToModel(user));
 
                 if (LoginStatus == "Success")
                 {
@@ -117,7 +106,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult CreateAccount(UserViewModel user)
         {
-            var converted = ViewModelConverter.ConvertUserViewModelToModel(user);
+            var converted = UserViewModel.ConvertUserViewModelToModel(user);
             var check = userlogic.CheckDoubleEmails(converted);
             if (check == true)
             {
@@ -176,7 +165,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [Authorize(Roles = "User")]
         public ActionResult Update(UserViewModel model)
         {
-            userlogic.Edit(ViewModelConverter.ConvertUserViewModelToModel(model));
+            userlogic.Edit(UserViewModel.ConvertUserViewModelToModel(model));
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index","Home");
         }

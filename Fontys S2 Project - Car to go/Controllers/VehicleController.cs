@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BLL;
-using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Logic_interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +22,7 @@ namespace Car_to_go.Controllers
             var all = _coll.GetAllCars();
             foreach (var vehicle in all)
             {
-               vehicleViews.Add(ViewModelConverter.ConvertModelToVehicleViewModel(vehicle));
+               vehicleViews.Add(VehicleViewModel.ConvertModelToVehicleViewModel(vehicle));
             }
             return View(vehicleViews);
         }
@@ -34,7 +32,7 @@ namespace Car_to_go.Controllers
             var all = _coll.GetAllVans();
             foreach (var vehicle in all)
             {
-                vehicleViews.Add(ViewModelConverter.ConvertModelToVehicleViewModel(vehicle));
+                vehicleViews.Add(VehicleViewModel.ConvertModelToVehicleViewModel(vehicle));
             }
             return View(vehicleViews);
         }
@@ -44,7 +42,7 @@ namespace Car_to_go.Controllers
             var all = _coll.GetAllSpecials();
             foreach (var vehicle in all)
             {
-               vehicleViews.Add(ViewModelConverter.ConvertModelToVehicleViewModel(vehicle));
+               vehicleViews.Add(VehicleViewModel.ConvertModelToVehicleViewModel(vehicle));
             }
             return View(vehicleViews);
         }
@@ -54,7 +52,7 @@ namespace Car_to_go.Controllers
         {
             var all = _coll.GetByID(ID);
             
-            var viewmodel = ViewModelConverter.ConvertModelToVehicleViewModel(all);
+            var viewmodel = VehicleViewModel.ConvertModelToVehicleViewModel(all);
             vehicleViews.Add(viewmodel);
                     
             return View(vehicleViews);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace Fontys_S2_Project___Car_to_go.Models
 {
+
     public class VehicleViewModel
     {
+
+        private static VehicleViewModel _viewmodel;
+        private static Vehicle _vehiclemodel;
+
+
         [Key]
         public int ID { get; set; }
 
@@ -69,7 +76,22 @@ namespace Fontys_S2_Project___Car_to_go.Models
 
         [Required(ErrorMessage = "This field is required, you have to pick a category!")]
         public int CategoryID { get; set; }
-
-      
+             
+        public static VehicleViewModel ConvertModelToVehicleViewModel(Vehicle model)
+        {
+            _viewmodel = new VehicleViewModel()
+            {
+                ID = model.ID, Brandname = model.Brandname, Modelname = model.Modelname, CategoryID = model.CategoryID, Seat = model.Seat, Cargospace = model.Cargospace, Enginepower = model.Enginepower, Acceleration = model.Acceleration, Fueltype = model.Fueltype, ImageLink = model.ImageLink, RentalPrice = model.RentalPrice, Transmission = model.Transmission, Weight = model.Weight
+            };
+            return _viewmodel;
+        }
+        public static Vehicle ConvertVehicleViewModelToModel(VehicleViewModel viewmodel)
+        {
+            _vehiclemodel = new Vehicle()
+            {
+                ID = viewmodel.ID, Seat = viewmodel.Seat, Acceleration = viewmodel.Acceleration, Brandname = viewmodel.Brandname, Cargospace = viewmodel.Cargospace, CategoryID = viewmodel.CategoryID, Enginepower = viewmodel.Enginepower, Fueltype = viewmodel.Fueltype, Weight = viewmodel.Weight, ImageLink = viewmodel.ImageLink, Modelname = viewmodel.Modelname, RentalPrice = viewmodel.RentalPrice, Transmission = viewmodel.Transmission
+            };
+            return _vehiclemodel;
+        }
     }
 }

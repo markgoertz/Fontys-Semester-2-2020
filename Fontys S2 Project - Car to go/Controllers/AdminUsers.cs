@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Fontys_S2_Project___Car_to_go.Converters;
 using Fontys_S2_Project___Car_to_go.Models;
 using Logic_interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -33,7 +32,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
 
             foreach (var user in all)   
             {
-                userviews.Add(ViewModelConverter.ConvertModelToUserViewModel(user));
+                userviews.Add(UserViewModel.ConvertModelToUserViewModel(user));
             }
 
             return View(userviews);
@@ -51,7 +50,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public IActionResult Create(UserViewModel usercheck)
         {
-            var convertedmodel = ViewModelConverter.ConvertUserViewModelToModel(usercheck);
+            var convertedmodel = UserViewModel.ConvertUserViewModelToModel(usercheck);
             var check = _user.CheckDoubleEmails(convertedmodel);
 
             if (check == true)
@@ -75,7 +74,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         public ActionResult Update(int ID)
         {
             var user = _coll.GetByID(ID);
-            var result = ViewModelConverter.ConvertModelToUserViewModel(user);
+            var result = UserViewModel.ConvertModelToUserViewModel(user);
             return View(result);
 
         }
@@ -83,7 +82,7 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         [HttpPost]
         public ActionResult Update(UserViewModel model)
         {
-            _user.Edit(ViewModelConverter.ConvertUserViewModelToModel(model));
+            _user.Edit(UserViewModel.ConvertUserViewModelToModel(model));
             TempData["Update"] = "The records has been changed from the system!";
             return RedirectToAction("Index");
         }
