@@ -30,5 +30,34 @@ namespace BLL.BLL_Services
             }
             return status;
         }
+        public bool IsEndDateGreaterThenStartDate(Reservation reservation)
+        {
+            var status = false;
+            var StartDate = reservation.StartDate;
+            var EndDate = reservation.EndDate;
+
+            if (EndDate > StartDate)
+            {
+                status = true;
+                return status;
+            }
+
+            return status;
+        }
+
+        public bool CorrectStartDate(Reservation reservation)
+        {
+            var status = false;
+            var StartDate = reservation.StartDate;
+            var TodaysDate = DateTime.Now.Date;
+
+            if (StartDate >= TodaysDate)
+            {
+                status = true;
+                return status;
+            }
+
+            return status;
+        }
     }
 }

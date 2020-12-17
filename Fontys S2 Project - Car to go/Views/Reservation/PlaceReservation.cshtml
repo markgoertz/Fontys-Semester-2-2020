@@ -12,24 +12,9 @@
     <div class="col-md-6 bg-dark text-white p-5">
 
 
-        @if (TempData["IncorrectStartData"] != null)
+        @if (TempData["ErrorReservation"] != null)
         {
-            <strong class="alert alert-danger">@TempData["IncorrectStartData"]</strong>
-            <br />
-            <br />
-         }
-
-
-        @if (TempData["IncorrectData"] != null)
-        {
-            <strong class="alert alert-danger">@TempData["IncorrectData"]</strong>
-            <br />
-            <br />
-         }
-
-        @if (TempData["TakenReservation"] != null)
-        {
-            <strong class="alert alert-danger">@TempData["TakenReservation"]</strong>
+            <strong class="alert alert-danger">@TempData["ErrorReservation"]</strong>
             <br />
             <br />
         }

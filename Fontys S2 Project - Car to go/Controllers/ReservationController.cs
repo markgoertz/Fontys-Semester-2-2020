@@ -64,15 +64,17 @@ namespace Fontys_S2_Project___Car_to_go.Controllers
         {
             var convertedmodel = ReservationViewModel.ConvertReservationViewModelToModel(reservationviewmodel);
             bool result = services.CheckForDate(convertedmodel);
+            bool resulttodaydate = services.CorrectStartDate(convertedmodel);
+            bool resultdateplacement = services.IsEndDateGreaterThenStartDate(convertedmodel);
 
-            if (result)
+            if (result && resultdateplacement && resulttodaydate == true)
             {
                 _reservationlogic.PlaceReservation(convertedmodel);
                 return RedirectToAction("Succes");
             }
             else
             {
-                TempData["TakenReservation"] = "Someone was before you! Please choose an different date!";
+                TempData["ErrorReservation"] = "An Error has occured have you put in the correct input?";
                 return View();
             }
         }
