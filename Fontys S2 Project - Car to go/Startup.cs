@@ -26,6 +26,7 @@ namespace Fontys_S2_Project___Car_to_go
         {
             configuration = new ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build();
             ConnectionString = configuration["ConnectionStrings:DefaultConnection"];
+            
         }
 
         public IConfiguration Configuration { get; }
