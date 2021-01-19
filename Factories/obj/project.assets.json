@@ -538,6 +538,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_DAL\\Fontys S2 Project - Car to go_DAL.csproj": {
               "projectPath": "D:\\Fontys Semester 2 2020\\Fontys S2 Project - Car to go_DAL\\Fontys S2 Project - Car to go_DAL.csproj"
@@ -556,6 +557,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -571,7 +573,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

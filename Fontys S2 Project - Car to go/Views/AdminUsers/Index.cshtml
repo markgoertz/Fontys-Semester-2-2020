@@ -87,8 +87,8 @@
                         @Html.DisplayFor(modelItem => item.Role)
                     </td>
                     <td>
-                        @Html.ActionLink("Update", "Update", new { ID = item.ID })
-                        @Html.ActionLink("Delete", "Delete", new { ID = item.ID }, new { onclick = "return confirm('Are sure wants to delete?');" })
+                        <button class="btn-warning">@Html.ActionLink("Update", "Update", new { ID = item.ID }, new { @class = "text-white p-3 text-decoration-none" })</button>
+                        <button class="btn-danger">@Html.ActionLink("Delete", "Delete", new { ID = item.ID }, new { onclick = "return confirm('Are sure wants to delete?');", @class = "text-white p-3 text-decoration-none" })</button>
                     </td>
                 </tr>
             }

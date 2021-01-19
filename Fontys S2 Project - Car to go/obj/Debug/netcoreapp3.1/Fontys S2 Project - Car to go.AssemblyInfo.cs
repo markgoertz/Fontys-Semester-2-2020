@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("0f12a688-8c6c-4c50-84df-697cd5b4c245")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fontys S2 Project - Car to go")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

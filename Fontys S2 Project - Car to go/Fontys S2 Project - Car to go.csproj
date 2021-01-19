@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Fontys_S2_Project___Car_to_go</RootNamespace>
+    <UserSecretsId>0f12a688-8c6c-4c50-84df-697cd5b4c245</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

@@ -29,11 +29,7 @@ namespace Car.To.Go.UnitTests.Mockdata
             StartDate = DateTime.Parse("20 June 2000")
 
         };
-        public static Reservation LaterThenToday = new Reservation()
-        {
-            StartDate = DateTime.FromFileTime(2030-05-10)
-
-        };
+        
 
 
     }
