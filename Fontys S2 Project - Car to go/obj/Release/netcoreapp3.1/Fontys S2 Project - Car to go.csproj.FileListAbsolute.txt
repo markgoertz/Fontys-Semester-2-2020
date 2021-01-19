@@ -1,6 +1,5 @@
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Release\netcoreapp3.1\appsettings.Development.json
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Release\netcoreapp3.1\appsettings.json
-D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Release\netcoreapp3.1\Properties\launchSettings.json
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go.exe
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go.deps.json
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\bin\Release\netcoreapp3.1\Fontys S2 Project - Car to go.runtimeconfig.json
@@ -146,3 +145,6 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go.pdb
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Fontys S2 Project - Car to go.genruntimeconfig.cache
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Razor\Views\Reservation\Index.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\scopedcss\bundle\Fontys S2 Project - Car to go.styles.css
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Razor\Views\Home\_partialIndex.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Release\netcoreapp3.1\Razor\Views\Shared\_LayoutCustom.cshtml.g.cs

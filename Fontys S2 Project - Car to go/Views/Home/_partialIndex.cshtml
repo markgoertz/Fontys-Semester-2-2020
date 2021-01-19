@@ -2,17 +2,149 @@
 <link href="~/css/site.css" rel="stylesheet" />
 <!-- Container element -->
 
+
+<style>
+
+    .parallax { /* The image used */
+        background-image: url("https://cdn.wallpapersafari.com/43/1/kq0WwF.jpg");
+        /* Set a specific height */ height: 900px;
+        /* Create the parallax scrolling effect */
+        position: relative;
+        opacity: 1.70;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .parallaxvan { /* The image used */
+        background-image: url("https://wallpapercave.com/wp/LhAAsqd.jpg");
+        /* Set a specific height */ height: 900px;
+        /* Create the parallax scrolling effect */
+        position: relative;
+        opacity: 1.70;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .parallaxspecials { /* The image used */
+        background-image: url("https://www.armoredcars.com/wp-content/uploads/2016/11/Front-3-1312x875.jpg");
+        /* Set a specific height */ height: 900px;
+        /* Create the parallax scrolling effect */
+        position: relative;
+        opacity: 1.70;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #header {
+        position: absolute;
+        z-index: 1000;
+        top: 550px;
+        left: 50%;
+        color: white;
+        font-size: 2em;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        transform: translate(-50%);
+    }
+
+    #header3 {
+        position: absolute;
+        z-index: 1000;
+        top: 1400px;
+        left: 50%;
+        color: white;
+        font-size: 2em;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        transform: translate(-50%);
+    }
+
+    #header5 {
+        position: absolute;
+        z-index: 1000;
+        top: 2250px;
+        left: 50%;
+        color: white;
+        font-size: 2em;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        transform: translate(-50%);
+    }
+
+    #header2
+    {
+        position: absolute;
+        z-index: 1000;
+        top: 450px;
+        left: 50%;
+        color: white;
+        font-size: 5em;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        transform: translate(-50%);
+    }
+
+    #header4 {
+        position: absolute;
+        z-index: 1000;
+        top: 1300px;
+        left: 50%;
+        color: white;
+        font-size: 3em;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        transform: translate(-50%);
+    }
+
+    #header6 {
+        position: absolute;
+        z-index: 1000;
+        top: 2150px;
+        left: 50%;
+        color: white;
+        font-size: 3em;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        transform: translate(-50%);
+    }
+
+
+    .btnbanner {
+        font-size: 1em;
+        color: #fff;
+        background: #ff0157;
+        display: inline-block;
+        padding: 10px 30px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 2px;
+        transition: 0.5s;
+    }
+
+    .bgcolour {
+        background-color: #343a40;
+    }
+
+</style>
+
 <body class="bgcolour">
 
     <h1 id="header2" class="pb-5">Welcome! </h1>
-    <a href="@Url.Action("CarIndex", "Vehicle")" class="btn btn-dark btnbanner text-decoration-none" id="header">Look our cars!</a>
+    <a href="@Url.Action("CarIndex", "Vehicle")" class="btn btn-dark btnbanner text-decoration-none" id="header">View our cars!</a>
     <div class="parallax"></div>
 
     <h1 id="header4" class="pb-5">Simply the best in services!</h1>
-    <a href="@Url.Action("VanIndex", "Vehicle")" class="btn btn-dark btnbanner text-decoration-none" id="header3">All Vans!</a>
+    <a href="@Url.Action("VanIndex", "Vehicle")" class="btn btn-dark btnbanner text-decoration-none" id="header3">View our vans!</a>
     <div class="parallaxvan"></div>
 
     <h1 id="header6" class="pb-5">And a excellent experience!</h1>
-    <a href="@Url.Action("SpecialVehicleIndex", "Vehicle")" class="btn btn-dark btnbanner text-decoration-none" id="header5">Look our range in specials!</a>
+    <a href="@Url.Action("SpecialVehicleIndex", "Vehicle")" class="btn btn-dark btnbanner text-decoration-none" id="header5">View our range in specials!</a>
     <div class="parallaxspecials"></div>
 </body>
