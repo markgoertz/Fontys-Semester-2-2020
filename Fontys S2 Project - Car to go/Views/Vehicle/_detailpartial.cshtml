@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Fontys_S2_Project___Car_to_go.Models.VehicleViewModel>
+
+<style>
+
+    .parallax { /* The image used */
+        height: 200px;
+        position: relative;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+
+    .parallaxcolls { /* The image used */
+        height: 600px;
+        position: relative;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .bg-image {
+        /* The image used */
+        background-image: url("https://www.formula1.com/content/dam/fom-website/manual/Misc/2020delay/ZandvoortPics/Zandvoort2.jpg");
+        /* Add the blur effect */
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* Position text in the middle of the page/image */
+    .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .colorforp {
+        color:black;
+        
+    }
+
+    
+</style>
+
+@foreach (var car in Model)
+{
+
+    <body class="bg-dark">
+        <div class="parallax">
+            <div class="bg-image img-fluid"></div>
+                <div class="bg-text text-center text-white">
+                   <h1 class="text-white" style="font-size:3em; font-family:'Poppins',sans-serif;">@car.Brandname | @car.Modelname</h1>
+                </div>           
+        </div>
+
+        <div class="parallaxcolls bg-white">
+            <div class="row">
+                <div class="col-md-6 border-primary text-center" style="font-family: 'Poppins',sans-serif;">
+                    <h4 class="font-weight-bold text-center p-3" style="font-size:1.5em">Technical Information</h4>
+                    <p class="font-weight-bold colorforp">Power = @car.Enginepower HP</p>
+                    <p class="font-weight-bold colorforp">Transmission: @car.Transmission</p>
+                    <p class="font-weight-bold colorforp">Acceleration 0-100km/h in @car.Acceleration seconds</p>
+                    <p class="font-weight-bold colorforp">Fueltype = @car.Fueltype</p>
+
+                    <br />
+                    <hr />
+                    <br />
+
+                    <h4 class="font-weight-bold text-center mt-2" style="font-size:1.5em;">Capacities Information</h4>
+
+                    <p class="colorforp font-weight-bold pt-4">Amount of seats: @car.Seat</p>
+                    <p class="colorforp font-weight-bold pb-3">Cargospace = @car.Cargospace L</p>
+
+                    <hr />
+                    <br />
+                    <h5 class="font-weight-bold pl-3">Rental price per day €@car.RentalPrice</h5>
+                    <form asp-controller="Reservation" asp-action="PlaceReservation" method="get" style="align-items:flex-end">
+                        <input type="hidden" name="Id" value="@car.ID" />
+                        <button type="submit" class="btn btn-primary btn-lg h3">Make a Reservation!</button>
+                    </form>
+                </div>
+                <div class="col-md-6 border-primary">
+                    <img src="@car.ImageLink" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </body>
+}

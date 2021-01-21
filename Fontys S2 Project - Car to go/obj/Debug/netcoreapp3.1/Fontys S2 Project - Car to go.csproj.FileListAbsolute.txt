@@ -148,3 +148,4 @@ D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\scopedcss\bundle\Fontys S2 Project - Car to go.styles.css
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Home\_partialIndex.cshtml.g.cs
 D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutCustom.cshtml.g.cs
+D:\Fontys Semester 2 2020\Fontys S2 Project - Car to go\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\_detailpartial.cshtml.g.cs
